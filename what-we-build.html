@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We Build — Xencore Global AG</title>
+<meta name="description" content="Forge AI Platform, reforestation technology, Infor ERP services, and specialist staffing. Built by Xencore Global AG, Switzerland.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---- PAGE-SPECIFIC: WHAT WE BUILD ----------------------- */
+
+.page-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.page-hero__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--tx-primary);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 12px;
+  max-width: 700px;
+}
+
+/* Section layout — alternating feature sections */
+.build-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.build-section__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.build-section__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.build-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 10px;
+}
+.build-section__desc {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  line-height: 1.8;
+  padding-top: 14px;
+}
+
+/* Feature list */
+.build-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.build-feature {
+  background: var(--surf-1);
+  padding: 28px 26px;
+  transition: background 0.15s;
+}
+.build-feature:hover { background: var(--surf-2); }
+.build-feature__icon {
+  width: 36px; height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-md);
+  margin-bottom: 14px;
+}
+.build-feature__icon svg {
+  width: 20px; height: 20px;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.build-feature__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.build-feature__desc {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.65;
+}
+
+/* ---- FORGE SECTION ---- */
+#forge .build-section__title { color: var(--tx-primary); }
+#forge .build-section__title span { color: var(--xc-orange); }
+#forge .build-feature__icon { background: var(--xc-orange-dim); }
+#forge .build-feature__icon svg { stroke: var(--xc-orange); }
+
+/* Forge metrics row */
+.forge-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 16px;
+}
+.forge-metric {
+  background: var(--surf-1);
+  padding: 24px 20px;
+  text-align: center;
+}
+.forge-metric__num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--xc-orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.forge-metric__label {
+  font-size: 11px;
+  color: var(--tx-muted);
+  line-height: 1.4;
+}
+
+/* ---- REFORESTATION SECTION ---- */
+#reforestation {
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(42,122,71,0.04) 50%, var(--bg) 100%);
+}
+#reforestation .build-section__title span { color: var(--xc-green-light); }
+#reforestation .build-feature__icon { background: var(--xc-green-dim); }
+#reforestation .build-feature__icon svg { stroke: var(--xc-green-light); }
+
+.reforestation-callout {
+  background: var(--xc-green-dim);
+  border: 1px solid var(--xc-green-bdr);
+  border-radius: var(--r-xl);
+  padding: 32px 36px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+.reforestation-callout__text {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  line-height: 1.75;
+}
+.reforestation-callout__text strong {
+  color: var(--xc-green-light);
+  font-weight: 500;
+}
+
+/* ---- ERP SECTION ---- */
+#erp .build-section__title span { color: var(--tx-secondary); }
+#erp .build-feature__icon { background: var(--surf-3); }
+#erp .build-feature__icon svg { stroke: var(--tx-secondary); }
+
+.infor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--tx-muted);
+  margin-bottom: 20px;
+}
+.infor-badge span { color: var(--tx-secondary); font-weight: 500; }
+
+/* ---- STAFFING SECTION ---- */
+#staffing { background: var(--surf-1); }
+.staffing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.staffing-card {
+  background: var(--bg);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  transition: border-color 0.15s;
+}
+.staffing-card:hover { border-color: var(--bdr-3); }
+.staffing-card__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 8px;
+}
+.staffing-card__desc {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.staffing-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.staffing-card__tag {
+  padding: 3px 10px;
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--tx-muted);
+}
+
+@media (max-width: 960px) {
+  .build-section__header { grid-template-columns: 1fr; gap: 16px; }
+  .build-features { grid-template-columns: 1fr 1fr; }
+  .forge-metrics { grid-template-columns: repeat(2, 1fr); }
+  .reforestation-callout { grid-template-columns: 1fr; }
+  .staffing-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .build-features { grid-template-columns: 1fr; }
+  .page-hero__inner { padding: 0 20px; }
+  .build-section__inner { padding: 0 20px; }
+  .build-section { padding: 64px 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="xc-nav" role="navigation" aria-label="Main navigation">
+  <div class="xc-nav__inner">
+    <a href="index.html" class="xc-nav__logo" aria-label="Xencore Global home">
+      <div class="xc-nav__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+      </div>
+      <div class="xc-nav__logo-text">
+        <span class="xc-nav__logo-name">Xencore Global</span>
+        <span class="xc-nav__logo-sub">AG · Wollerau, Switzerland</span>
+      </div>
+    </a>
+    <div class="xc-nav__links" id="xc-nav-links">
+      <a href="index.html"          class="xc-nav__link">Home</a>
+      <a href="what-we-build.html"  class="xc-nav__link is-active">What we build</a>
+      <a href="about.html"          class="xc-nav__link">About</a>
+      <a href="about.html#contact"  class="btn btn--primary" style="font-size:13px;padding:8px 18px">Get in touch</a>
+    </div>
+    <button class="xc-nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav(this)">&#9776;</button>
+  </div>
+</nav>
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <div class="eyebrow eyebrow--orange fade-up">What we build</div>
+    <h1 class="page-hero__title fade-up fade-up-1">
+      Three technologies.<br>One mission:<br>build what matters.
+    </h1>
+  </div>
+</div>
+
+
+<!-- SECTION 1: FORGE -->
+<section class="build-section" id="forge" aria-labelledby="forge-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--orange">AI Platform · In production</div>
+        <h2 class="build-section__title" id="forge-title">
+          <span>Forge</span> — the decision<br>layer on top of AI.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Forge is our flagship AI product, built by Xencore Global and used by
+        professionals daily. Ask one question — eight AI engines answer
+        simultaneously. The strongest answer surfaces instantly, backed by a
+        consensus score across all responses. A decision engine, not just a chatbot.
+      </div>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12H3"/>
+            <path d="M19 12h2"/>
+            <path d="M12 5V3"/>
+            <path d="M12 19v2"/>
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M7.05 7.05L5.64 5.64"/>
+            <path d="M16.95 7.05l1.41-1.41"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Broadcast</div>
+        <div class="build-feature__desc">
+          Fire one question to all 8 AIs simultaneously. The strongest answer
+          surfaces instantly — no side-by-side review required.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="18" rx="1"/>
+            <rect x="14" y="3" width="7" height="18" rx="1"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Perspectives</div>
+        <div class="build-feature__desc">
+          See all AI responses side by side with a live consensus score.
+          Streamed in real time — ~30 seconds from question to synthesis.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Synthesis</div>
+        <div class="build-feature__desc">
+          Forge reads every AI response and produces one Best-of-Best answer.
+          Multiple analysis modes: Executive Summary, Consensus Map, Divergence Spotlight.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="3" y1="15" x2="21" y2="15"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+            <line x1="15" y1="3" x2="15" y2="21"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Excel Analysis</div>
+        <div class="build-feature__desc">
+          Drop any .xlsx, .csv, or .tsv file. Ask a question. Eight AIs analyse
+          your data simultaneously with automatic write-back fixes.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">AI Diary</div>
+        <div class="build-feature__desc">
+          Every decision logged and searchable. Add a note to each synthesis:
+          "What did you decide?" — the only AI product that closes the loop.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Forge Dock</div>
+        <div class="build-feature__desc">
+          Chrome extension that sits on every AI you already use. Switch providers,
+          get perspectives, and access Forge without leaving the page.
+        </div>
+      </div>
+    </div>
+
+    <div class="forge-metrics">
+      <div class="forge-metric">
+        <div class="forge-metric__num">8</div>
+        <div class="forge-metric__label">AI engines<br>ready</div>
+      </div>
+      <div class="forge-metric">
+        <div class="forge-metric__num">~30s</div>
+        <div class="forge-metric__label">avg decision<br>velocity</div>
+      </div>
+      <div class="forge-metric">
+        <div class="forge-metric__num">98%</div>
+        <div class="forge-metric__label">avg consensus<br>score</div>
+      </div>
+      <div class="forge-metric">
+        <div class="forge-metric__num">Free</div>
+        <div class="forge-metric__label">forever plan,<br>no credit card</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://forge.projectcoachai.com"
+         class="btn btn--primary"
+         target="_blank" rel="noopener">
+        Try Forge free
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 2: REFORESTATION -->
+<!-- NOTE: Replace [Platform Name] with the actual product name throughout -->
+<section class="build-section" id="reforestation" aria-labelledby="reforestation-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--green">Environmental Technology · Swiss client</div>
+        <h2 class="build-section__title" id="reforestation-title">
+          Reforestation technology<br>that certifies<br><span>real impact.</span>
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Built for a prominent Swiss environmental client, our reforestation platform
+        manages the full lifecycle of carbon credit certification — from field polygon
+        delineation and satellite monitoring to Verra-standard verification and
+        reporting. Technology that turns reforestation into verifiable, tradeable impact.
+      </div>
+    </div>
+
+    <!-- Replace this callout text with the actual client brief/product description -->
+    <div class="reforestation-callout">
+      <div class="reforestation-callout__text">
+        <strong>Built for Verra certification standards.</strong> Our platform manages
+        field polygon data, automated monitoring reports, carbon sequestration
+        calculations, and chain-of-custody documentation — giving environmental
+        organisations a defensible, auditable record of every hectare restored.
+        Deployed for a leading Swiss client operating reforestation projects across
+        multiple geographies.
+      </div>
+      <a href="about.html#contact" class="btn btn--outline-green">
+        Request briefing
+      </a>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Field polygon management</div>
+        <div class="build-feature__desc">
+          Precise delineation and tracking of reforestation zones. GPS-verified
+          boundaries with audit-ready coordinate records.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Satellite monitoring</div>
+        <div class="build-feature__desc">
+          Continuous remote sensing integration for forest cover change detection,
+          canopy density measurement, and anomaly alerting.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Verra-standard reporting</div>
+        <div class="build-feature__desc">
+          Automated generation of VCS/REDD+ compliant documentation for
+          submission to Verra certification bodies.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="12" y1="20" x2="12" y2="10"/>
+            <line x1="18" y1="20" x2="18" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="16"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Carbon credit calculation</div>
+        <div class="build-feature__desc">
+          Transparent, auditable carbon sequestration modelling with
+          species-specific growth curves and soil carbon accounting.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Chain of custody</div>
+        <div class="build-feature__desc">
+          End-to-end audit trail from land preparation through certification,
+          credit issuance, and retirement — fully traceable.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Dashboard & reporting</div>
+        <div class="build-feature__desc">
+          Real-time project dashboards for landowners, investors, and
+          certifiers — exportable to PDF, CSV, and regulatory formats.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 3: ERP -->
+<section class="build-section" id="erp" aria-labelledby="erp-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="infor-badge">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--xc-orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>Official Infor Delivery Partner</span>
+        </div>
+        <h2 class="build-section__title" id="erp-title">
+          Infor ERP —<br>end-to-end<br><span>expertise.</span>
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Our foundation. Twenty years of Infor LN, M3, and CloudSuite delivery
+        across manufacturing, distribution, and services. We implement, migrate,
+        integrate, train, and support — from initial assessment to long-term managed
+        operations. The expertise that underpins everything else we build.
+      </div>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="build-feature__name">Infor LN &amp; M3 implementation</div>
+        <div class="build-feature__desc">Full lifecycle delivery from blueprint through go-live. 28% faster average implementation timeline.</div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg></div>
+        <div class="build-feature__name">CloudSuite migration</div>
+        <div class="build-feature__desc">Structured migration to Infor CloudSuite on AWS and Azure with zero-downtime cutover planning.</div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="build-feature__name">Data migration</div>
+        <div class="build-feature__desc">Third-party ERP to Infor migration specialists. SAP, Oracle, Microsoft Dynamics — we've migrated them all.</div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="build-feature__name">Integration &amp; API</div>
+        <div class="build-feature__desc">Infor OS, ION, and third-party integration. Salesforce, ServiceNow, custom REST/SOAP connections.</div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="build-feature__name">Virtual training</div>
+        <div class="build-feature__desc">Infor M3 Watch &amp; Learn courses with optional live system access. Self-paced or instructor-led.</div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <div class="build-feature__name">Managed support</div>
+        <div class="build-feature__desc">Flexible application management and support. From break-fix to full AMS — scaled to your team's needs.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 4: STAFFING -->
+<section class="build-section" id="staffing" aria-labelledby="staffing-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow">Staffing</div>
+        <h2 class="build-section__title" id="staffing-title">
+          Specialist talent,<br>on demand.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        When projects need Infor expertise fast, we provide it. Offshore dedicated
+        teams, contract specialists, and interim leadership — all with proven
+        Infor delivery track records. One hire or a full team, contract or permanent.
+      </div>
+    </div>
+
+    <div class="staffing-grid">
+      <div class="staffing-card">
+        <div class="staffing-card__title">Offshore dedicated teams</div>
+        <div class="staffing-card__desc">
+          Build a dedicated Infor competence centre offshore — fully managed,
+          embedded in your delivery model. Ideal for long-running programmes
+          that need sustained specialist resource at competitive rates.
+        </div>
+        <div class="staffing-card__tags">
+          <span class="staffing-card__tag">Infor LN</span>
+          <span class="staffing-card__tag">Infor M3</span>
+          <span class="staffing-card__tag">CloudSuite</span>
+          <span class="staffing-card__tag">Nearshoring</span>
+        </div>
+      </div>
+      <div class="staffing-card">
+        <div class="staffing-card__title">Contract specialists</div>
+        <div class="staffing-card__desc">
+          Plug specialist Infor skills into active projects without a permanent
+          hire. Functional consultants, technical developers, data migration
+          experts, and interim programme managers.
+        </div>
+        <div class="staffing-card__tags">
+          <span class="staffing-card__tag">Contract</span>
+          <span class="staffing-card__tag">Contract-to-hire</span>
+          <span class="staffing-card__tag">Interim leadership</span>
+        </div>
+      </div>
+      <div class="staffing-card">
+        <div class="staffing-card__title">Specialised skill hire</div>
+        <div class="staffing-card__desc">
+          Rare skills for rare requirements — ION specialists, Infor BI
+          developers, ISS/Data Lake architects, and multi-ERP migration leads
+          who have done it before.
+        </div>
+        <div class="staffing-card__tags">
+          <span class="staffing-card__tag">ION</span>
+          <span class="staffing-card__tag">Infor BI</span>
+          <span class="staffing-card__tag">Data Lake</span>
+          <span class="staffing-card__tag">ISS</span>
+        </div>
+      </div>
+      <div class="staffing-card">
+        <div class="staffing-card__title">AI &amp; development talent</div>
+        <div class="staffing-card__desc">
+          As we grow our AI and development practice, we provide specialist
+          engineers with Infor integration experience, AI/ML capability,
+          and full-stack development backgrounds.
+        </div>
+        <div class="staffing-card__tags">
+          <span class="staffing-card__tag">AI/ML</span>
+          <span class="staffing-card__tag">Full-stack</span>
+          <span class="staffing-card__tag">Infor integration</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section style="padding:80px 0;border-top:1px solid var(--bdr-1);text-align:center">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:10px">Let's work together</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,38px);font-weight:700;color:var(--tx-primary);margin-bottom:10px">
+      Tell us what you need.
+    </h2>
+    <p style="font-size:15px;color:var(--tx-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7">
+      ERP project, AI tooling, environmental platform, or specialist staffing —
+      we've built all of it. Let's talk.
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="about.html#contact" class="btn btn--primary">Get in touch</a>
+      <a href="about.html" class="btn btn--ghost">About Xencore Global</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="xc-footer" role="contentinfo">
+  <div class="xc-footer__inner">
+    <div>
+      <a href="index.html" class="xc-nav__logo" style="margin-bottom:14px;display:inline-flex">
+        <div class="xc-nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+        </div>
+        <div class="xc-nav__logo-text">
+          <span class="xc-nav__logo-name">Xencore Global</span>
+          <span class="xc-nav__logo-sub">AG · Switzerland</span>
+        </div>
+      </a>
+      <p class="xc-footer__brand-desc">Enterprise technology, AI innovation, and environmental solutions. Built with Swiss precision since 2021.</p>
+      <address class="xc-footer__address">Roosstrasse 53<br>8832 Wollerau<br>Switzerland</address>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Products</div>
+      <div class="xc-footer__col-links">
+        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="#reforestation">Reforestation Platform</a>
+        <a href="#erp">Infor ERP Services</a>
+        <a href="#staffing">Staffing</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Company</div>
+      <div class="xc-footer__col-links">
+        <a href="about.html">About us</a>
+        <a href="about.html#locations">Locations</a>
+        <a href="about.html#jobs">Jobs</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="https://www.linkedin.com/company/xencore-global-limited/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Partners</div>
+      <div class="xc-footer__col-links">
+        <a href="https://www.infor.com" target="_blank" rel="noopener">Infor</a>
+        <a href="https://aws.amazon.com" target="_blank" rel="noopener">AWS</a>
+        <a href="https://azure.microsoft.com" target="_blank" rel="noopener">Azure</a>
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>
+        <a href="https://www.servicenow.com" target="_blank" rel="noopener">ServiceNow</a>
+      </div>
+    </div>
+  </div>
+  <div class="xc-footer__bottom">
+    <div class="xc-footer__copy">&copy; 2026 Xencore Global AG, Roosstrasse 53, 8832 Wollerau, Switzerland. All rights reserved.</div>
+    <nav class="xc-footer__legal" aria-label="Legal links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  const links = document.getElementById('xc-nav-links');
+  const isOpen = links.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+
+</body>
+</html>

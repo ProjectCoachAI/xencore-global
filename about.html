@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About & Contact — Xencore Global AG</title>
+<meta name="description" content="Xencore Global AG — ERP specialists turned AI builders. Headquartered in Wollerau, Switzerland. Get in touch or explore career opportunities.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---- PAGE-SPECIFIC: ABOUT & CONTACT --------------------- */
+
+.page-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.page-hero__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--tx-primary);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 12px;
+  max-width: 680px;
+}
+
+/* Story section */
+.story {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.story__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+.story__sticky {
+  position: sticky;
+  top: 96px;
+}
+.story__label {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.story__sub {
+  font-size: 14px;
+  color: var(--tx-muted);
+  line-height: 1.7;
+}
+
+.story__body p {
+  font-size: 16px;
+  color: var(--tx-secondary);
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+.story__body p:last-child { margin-bottom: 0; }
+.story__body strong {
+  color: var(--tx-primary);
+  font-weight: 500;
+}
+.story__body .highlight {
+  color: var(--xc-orange);
+  font-weight: 500;
+}
+.story__body .highlight-green {
+  color: var(--xc-green-light);
+  font-weight: 500;
+}
+
+/* Values */
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 48px;
+}
+.value {
+  background: var(--surf-1);
+  padding: 28px 24px;
+}
+.value__num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--xc-orange);
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.value__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.value__desc {
+  font-size: 12px;
+  color: var(--tx-muted);
+  line-height: 1.65;
+}
+
+/* Locations */
+.locations {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.locations__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.locations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.location-card {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  transition: border-color 0.15s;
+}
+.location-card:hover { border-color: var(--bdr-3); }
+.location-card__flag {
+  font-size: 28px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.location-card__country {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--xc-orange);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.location-card__city {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 10px;
+}
+.location-card__detail {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.65;
+}
+.location-card--hq { border-color: var(--xc-orange-bdr); }
+.location-card--hq .location-card__country { color: var(--xc-orange); }
+
+/* Stack section */
+.stack {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.stack__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 36px;
+}
+.stack-item {
+  background: var(--surf-1);
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stack-item__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--xc-orange);
+  flex-shrink: 0;
+}
+.stack-item__name { font-size: 13px; color: var(--tx-secondary); }
+.stack-item__type { font-size: 11px; color: var(--tx-muted); margin-top: 1px; }
+
+/* Jobs */
+.jobs {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.jobs__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.jobs__note {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 36px;
+}
+.jobs__note-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.jobs__note-desc {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+}
+
+/* Contact */
+.contact {
+  padding: 96px 0;
+}
+.contact__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact__info-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+.contact__info-desc {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.contact__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.6;
+}
+.contact__detail-item svg {
+  width: 16px; height: 16px;
+  stroke: var(--xc-orange);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contact__detail-item a { color: var(--xc-orange); }
+.contact__detail-item a:hover { text-decoration: underline; }
+
+.contact__form-wrap {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 36px;
+}
+.contact__form-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 24px;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px 0;
+}
+.form-success__icon {
+  width: 48px; height: 48px;
+  background: var(--xc-orange-dim);
+  border: 1px solid var(--xc-orange-bdr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.form-success__icon svg {
+  width: 22px; height: 22px;
+  stroke: var(--xc-orange);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.form-success__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.form-success__body { font-size: 13px; color: var(--tx-secondary); }
+
+@media (max-width: 960px) {
+  .story__inner   { grid-template-columns: 1fr; gap: 32px; }
+  .story__sticky  { position: static; }
+  .values         { grid-template-columns: 1fr 1fr; }
+  .locations__grid { grid-template-columns: 1fr 1fr; }
+  .stack__grid    { grid-template-columns: repeat(2, 1fr); }
+  .jobs__note     { grid-template-columns: 1fr; }
+  .contact__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .page-hero__inner  { padding: 0 20px; }
+  .story__inner      { padding: 0 20px; }
+  .locations__inner  { padding: 0 20px; }
+  .stack__inner      { padding: 0 20px; }
+  .jobs__inner       { padding: 0 20px; }
+  .contact__inner    { padding: 0 20px; }
+  .values            { grid-template-columns: 1fr; }
+  .locations__grid   { grid-template-columns: 1fr; }
+  .stack__grid       { grid-template-columns: 1fr 1fr; }
+  .contact__form-wrap { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="xc-nav" role="navigation" aria-label="Main navigation">
+  <div class="xc-nav__inner">
+    <a href="index.html" class="xc-nav__logo" aria-label="Xencore Global home">
+      <div class="xc-nav__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+      </div>
+      <div class="xc-nav__logo-text">
+        <span class="xc-nav__logo-name">Xencore Global</span>
+        <span class="xc-nav__logo-sub">AG · Wollerau, Switzerland</span>
+      </div>
+    </a>
+    <div class="xc-nav__links" id="xc-nav-links">
+      <a href="index.html"          class="xc-nav__link">Home</a>
+      <a href="what-we-build.html"  class="xc-nav__link">What we build</a>
+      <a href="about.html"          class="xc-nav__link is-active">About</a>
+      <a href="#contact"            class="btn btn--primary" style="font-size:13px;padding:8px 18px">Get in touch</a>
+    </div>
+    <button class="xc-nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav(this)">&#9776;</button>
+  </div>
+</nav>
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <div class="eyebrow eyebrow--orange fade-up">About Xencore Global AG</div>
+    <h1 class="page-hero__title fade-up fade-up-1">
+      ERP specialists.<br>AI builders.<br>Swiss precision.
+    </h1>
+  </div>
+</div>
+
+
+<!-- STORY -->
+<section class="story" aria-labelledby="story-title">
+  <div class="story__inner">
+
+    <div class="story__sticky">
+      <div class="eyebrow">Our story</div>
+      <h2 class="story__label" id="story-title">
+        Twenty years of enterprise expertise — now building what's next.
+      </h2>
+      <p class="story__sub">
+        Headquartered in Wollerau, Switzerland. Operating globally.
+        Built on Infor. Expanding into AI and environmental technology.
+      </p>
+    </div>
+
+    <div class="story__body">
+      <p>
+        Xencore Global AG was founded on a single conviction: <strong>enterprise
+        technology should work harder for the businesses that depend on it.</strong>
+        For two decades we built that conviction into one of Europe's most
+        experienced Infor ERP delivery organisations — implementing, migrating,
+        integrating, and supporting Infor LN, M3, and CloudSuite for manufacturers,
+        distributors, and service organisations across the continent.
+      </p>
+      <p>
+        That foundation didn't just give us a client base. It gave us a
+        front-row seat to how businesses actually make decisions — and how
+        slow, fragmented, and costly that process had become.
+        <span class="highlight">Forge was our answer.</span> An AI decision platform
+        that fires one question simultaneously at eight leading AI engines and returns
+        perspectives, synthesis, and a consensus score in under 30 seconds.
+        Built by Xencore. Used by professionals every day.
+      </p>
+      <p>
+        Our third frontier is the planet. When a prominent Swiss client needed
+        technology to manage and certify reforestation at scale,
+        <span class="highlight-green">we built a platform</span> that handles
+        field polygon management, satellite monitoring, carbon credit calculation,
+        and Verra-standard reporting. Technology that turns environmental intent
+        into verifiable, auditable impact.
+      </p>
+      <p>
+        We are a small team with a long track record and a broad technology
+        capability. We don't do everything. We do three things exceptionally well —
+        and we do them from Switzerland, where precision is not optional.
+      </p>
+    </div>
+
+  </div>
+
+  <div style="max-width:1160px;margin:56px auto 0;padding:0 32px">
+    <div class="values">
+      <div class="value">
+        <div class="value__num">01</div>
+        <div class="value__title">Swiss precision</div>
+        <div class="value__desc">We are headquartered in Switzerland by choice, not convenience. The standard it sets applies to every delivery, every line of code, every client commitment.</div>
+      </div>
+      <div class="value">
+        <div class="value__num">02</div>
+        <div class="value__title">Build, don't consult</div>
+        <div class="value__desc">We are a technology company that also consults — not a consultancy that dabbles in technology. Every service we offer is anchored in something real that we've built.</div>
+      </div>
+      <div class="value">
+        <div class="value__num">03</div>
+        <div class="value__title">Local-first, global-ready</div>
+        <div class="value__desc">FADP compliant by default. Your data stays where you put it. Our products are built for a world where data sovereignty is non-negotiable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations" aria-labelledby="locations-title">
+  <div class="locations__inner">
+    <div class="eyebrow">Where we operate</div>
+    <h2 class="xc-section-title" style="margin-top:10px" id="locations-title">
+      Swiss HQ. Global reach.
+    </h2>
+    <p class="xc-section-sub">
+      Our headquarters are in Wollerau, Canton Schwyz, Switzerland.
+      We deliver from there and from a growing network of nearshore and
+      offshore competence centres.
+    </p>
+
+    <div class="locations__grid">
+      <div class="location-card location-card--hq">
+        <div class="location-card__flag" aria-hidden="true">🇨🇭</div>
+        <div class="location-card__country">Headquarters</div>
+        <div class="location-card__city">Wollerau</div>
+        <div class="location-card__detail">
+          Roosstrasse 53<br>
+          8832 Wollerau<br>
+          Canton Schwyz, Switzerland<br><br>
+          FADP compliant · Infor Delivery Partner
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__flag" aria-hidden="true">🇪🇺</div>
+        <div class="location-card__country">European operations</div>
+        <div class="location-card__city">Europe</div>
+        <div class="location-card__detail">
+          Client delivery across Western and Central Europe.
+          On-site and remote engagement models for Infor ERP
+          programmes, staffing placements, and AI deployments.
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__flag" aria-hidden="true">🌍</div>
+        <div class="location-card__country">Offshore & nearshore</div>
+        <div class="location-card__city">Global</div>
+        <div class="location-card__detail">
+          Dedicated offshore competence centres for sustained
+          Infor delivery capacity. Nearshoring staffing options
+          across multiple time zones.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TECH STACK -->
+<section class="stack" aria-labelledby="stack-title">
+  <div class="stack__inner">
+    <div class="eyebrow">Our technology stack</div>
+    <h2 class="xc-section-title" style="margin-top:10px" id="stack-title">
+      Built on modern infrastructure.
+    </h2>
+    <p class="xc-section-sub">
+      We practice what we build. Our own products and operations run on
+      the same modern stack we recommend to clients.
+    </p>
+    <div class="stack__grid">
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">GitHub</div>
+          <div class="stack-item__type">Version control · CI/CD</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Cloudflare</div>
+          <div class="stack-item__type">CDN · DNS · Security</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Railway</div>
+          <div class="stack-item__type">App deployment</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Claude AI</div>
+          <div class="stack-item__type">AI development · Content</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">AWS</div>
+          <div class="stack-item__type">Cloud infrastructure</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Microsoft Azure</div>
+          <div class="stack-item__type">Enterprise cloud</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Infor OS / ION</div>
+          <div class="stack-item__type">ERP integration layer</div>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item__dot"></div>
+        <div>
+          <div class="stack-item__name">Salesforce &amp; ServiceNow</div>
+          <div class="stack-item__type">CRM · ITSM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOBS -->
+<section class="jobs" id="jobs" aria-labelledby="jobs-title">
+  <div class="jobs__inner">
+    <div class="eyebrow">Careers</div>
+    <h2 class="xc-section-title" style="margin-top:10px" id="jobs-title">
+      Join the team.
+    </h2>
+    <p class="xc-section-sub">
+      We're a small, experienced team building technology that matters.
+      We hire for expertise, not headcount — and we work with people who
+      take quality personally.
+    </p>
+    <div class="jobs__note">
+      <div>
+        <div class="jobs__note-title">We're always open to the right person.</div>
+        <div class="jobs__note-desc">
+          Whether you're an Infor specialist, a full-stack engineer, an AI/ML
+          developer, or an environmental data scientist — if you're exceptional
+          at what you do and want to work from or with Switzerland, get in touch.
+          We hire when we find the right fit, not to a headcount target.
+        </div>
+      </div>
+      <a href="#contact" class="btn btn--ghost">Send your CV</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact__inner">
+
+    <div>
+      <div class="eyebrow eyebrow--orange">Contact</div>
+      <h2 class="contact__info-title" id="contact-title">
+        Let's talk about<br>what we can<br>build together.
+      </h2>
+      <p class="contact__info-desc">
+        Whether you have an ERP project, want to try Forge, are interested in
+        our reforestation platform, or need specialist staffing — we respond
+        to every genuine enquiry within one business day.
+      </p>
+      <div class="contact__detail">
+        <div class="contact__detail-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            Xencore Global AG<br>
+            Roosstrasse 53<br>
+            8832 Wollerau<br>
+            Switzerland
+          </div>
+        </div>
+        <div class="contact__detail-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <!-- Replace with actual contact email -->
+          <a href="mailto:info@xencoreglobal.com">info@xencoreglobal.com</a>
+        </div>
+        <div class="contact__detail-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          <a href="https://www.linkedin.com/company/xencore-global-limited/"
+             target="_blank" rel="noopener">
+            linkedin.com/company/xencore-global-limited
+          </a>
+        </div>
+        <div class="contact__detail-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          <a href="https://github.com/xencore-global"
+             target="_blank" rel="noopener">
+            github.com/xencore-global
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact__form-wrap">
+      <div class="contact__form-title">Send us a message</div>
+
+      <!-- FORM SUCCESS STATE -->
+      <div class="form-success" id="form-success" role="alert">
+        <div class="form-success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="form-success__title">Message sent</div>
+        <div class="form-success__body">
+          Thank you — we'll be in touch within one business day.
+        </div>
+      </div>
+
+      <!--
+        FORM ACTION: Replace with your Cloudflare Pages Function endpoint
+        or a Formspree URL: action="https://formspree.io/f/YOUR_FORM_ID"
+        For Cloudflare Pages Functions: action="/api/contact" method="POST"
+      -->
+      <form
+        class="xc-form"
+        id="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        onsubmit="handleSubmit(event)"
+        novalidate
+      >
+        <div class="xc-form__row">
+          <div class="xc-field">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Daniel Jones" required autocomplete="name"/>
+          </div>
+          <div class="xc-field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company"
+                   placeholder="Xencore Global AG" autocomplete="organization"/>
+          </div>
+        </div>
+
+        <div class="xc-field">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email"
+                 placeholder="daniel@example.com" required autocomplete="email"/>
+        </div>
+
+        <div class="xc-field">
+          <label for="topic">I'm interested in</label>
+          <select id="topic" name="topic">
+            <option value="">Select a topic…</option>
+            <option value="erp">Infor ERP services</option>
+            <option value="forge">Forge — AI platform</option>
+            <option value="reforestation">Reforestation platform</option>
+            <option value="staffing">Staffing &amp; recruitment</option>
+            <option value="partnership">Partnership</option>
+            <option value="jobs">Jobs &amp; careers</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="xc-field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message"
+                    placeholder="Tell us about your project or question…"
+                    required></textarea>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <button type="submit" class="btn btn--primary" id="submit-btn">
+            Send message
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+          <span style="font-size:12px;color:var(--tx-muted)">
+            We respond within one business day.
+          </span>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="xc-footer" role="contentinfo">
+  <div class="xc-footer__inner">
+    <div>
+      <a href="index.html" class="xc-nav__logo" style="margin-bottom:14px;display:inline-flex">
+        <div class="xc-nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+        </div>
+        <div class="xc-nav__logo-text">
+          <span class="xc-nav__logo-name">Xencore Global</span>
+          <span class="xc-nav__logo-sub">AG · Switzerland</span>
+        </div>
+      </a>
+      <p class="xc-footer__brand-desc">Enterprise technology, AI innovation, and environmental solutions. Built with Swiss precision since 2021.</p>
+      <address class="xc-footer__address">Roosstrasse 53<br>8832 Wollerau<br>Switzerland</address>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Products</div>
+      <div class="xc-footer__col-links">
+        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="what-we-build.html#reforestation">Reforestation Platform</a>
+        <a href="what-we-build.html#erp">Infor ERP Services</a>
+        <a href="what-we-build.html#staffing">Staffing</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Company</div>
+      <div class="xc-footer__col-links">
+        <a href="about.html">About us</a>
+        <a href="#locations">Locations</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/company/xencore-global-limited/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Partners</div>
+      <div class="xc-footer__col-links">
+        <a href="https://www.infor.com" target="_blank" rel="noopener">Infor</a>
+        <a href="https://aws.amazon.com" target="_blank" rel="noopener">AWS</a>
+        <a href="https://azure.microsoft.com" target="_blank" rel="noopener">Azure</a>
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>
+        <a href="https://www.servicenow.com" target="_blank" rel="noopener">ServiceNow</a>
+      </div>
+    </div>
+  </div>
+  <div class="xc-footer__bottom">
+    <div class="xc-footer__copy">&copy; 2026 Xencore Global AG, Roosstrasse 53, 8832 Wollerau, Switzerland. All rights reserved.</div>
+    <nav class="xc-footer__legal" aria-label="Legal links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  const links = document.getElementById('xc-nav-links');
+  const isOpen = links.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contact-form');
+  const btn  = document.getElementById('submit-btn');
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+      alert('Something went wrong. Please email us directly at info@xencoreglobal.com');
+    }
+  } catch {
+    btn.textContent = 'Send message';
+    btn.disabled = false;
+    alert('Something went wrong. Please email us directly at info@xencoreglobal.com');
+  }
+}
+</script>
+
+</body>
+</html>

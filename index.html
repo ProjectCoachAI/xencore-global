@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xencore Global AG — Enterprise Technology. AI Innovation. Environmental Solutions.</title>
+<meta name="description" content="Xencore Global AG builds enterprise ERP solutions, AI products, and environmental technology. Headquartered in Wollerau, Switzerland.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---- PAGE-SPECIFIC: HOME ---------------------------------- */
+
+/* Hero */
+.hero {
+  padding: 96px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(232,101,42,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--tx-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.hero__label span { color: var(--xc-orange); }
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 800;
+  color: var(--tx-primary);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+.hero__headline em {
+  font-style: normal;
+  color: var(--xc-orange);
+}
+.hero__headline .line-green {
+  color: var(--xc-green-light);
+}
+
+.hero__sub {
+  font-size: 18px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Products intro section */
+.products {
+  padding: 80px 0 96px;
+}
+.products__head {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.products__title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-top: 8px;
+}
+.products__grid-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Stats row */
+.stats {
+  border-top: 1px solid var(--bdr-1);
+  border-bottom: 1px solid var(--bdr-1);
+  padding: 0;
+}
+.stats__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+  padding: 36px 24px;
+  border-right: 1px solid var(--bdr-1);
+  text-align: center;
+}
+.stat:last-child { border-right: none; }
+.stat__num {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--tx-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat__num span { color: var(--xc-orange); }
+.stat__label {
+  font-size: 12px;
+  color: var(--tx-muted);
+  line-height: 1.5;
+}
+
+/* Forge feature */
+.forge-feature {
+  padding: 96px 0;
+  border-top: 1px solid var(--bdr-1);
+}
+.forge-feature__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.forge-feature__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--xc-orange-dim);
+  border: 1px solid var(--xc-orange-bdr);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--xc-orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.forge-feature__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.forge-feature__title span { color: var(--xc-orange); }
+.forge-feature__desc {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.forge-feature__points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.forge-feature__point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tx-secondary);
+}
+.forge-feature__point-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--xc-orange);
+  flex-shrink: 0;
+}
+
+/* Forge product preview block */
+.forge-preview {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+.forge-preview__bar {
+  padding: 10px 16px;
+  background: var(--surf-2);
+  border-bottom: 1px solid var(--bdr-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.forge-preview__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--bdr-3);
+}
+.forge-preview__url {
+  flex: 1;
+  font-size: 11px;
+  color: var(--tx-muted);
+  text-align: center;
+}
+.forge-preview__body { padding: 20px; }
+.forge-preview__question {
+  font-size: 13px;
+  color: var(--tx-primary);
+  padding: 10px 14px;
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-md);
+  margin-bottom: 14px;
+}
+.forge-preview__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.forge-preview__card {
+  background: var(--surf-3);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-md);
+  padding: 8px;
+}
+.forge-preview__card-head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.forge-preview__card-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+.forge-preview__card-name {
+  font-size: 9px;
+  color: var(--tx-secondary);
+}
+.forge-preview__card-body {
+  font-size: 9px;
+  color: var(--tx-muted);
+  line-height: 1.5;
+}
+.forge-preview__consensus {
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-md);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.forge-preview__consensus-label { font-size: 10px; color: var(--tx-secondary); }
+.forge-preview__consensus-score {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--xc-orange);
+}
+
+/* CTA band */
+.cta-band {
+  padding: 80px 0;
+  border-top: 1px solid var(--bdr-1);
+  text-align: center;
+}
+.cta-band__title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 10px;
+}
+.cta-band__sub {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  margin-bottom: 28px;
+}
+.cta-band__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .stats__inner { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(3) { border-top: 1px solid var(--bdr-1); }
+  .stat:nth-child(4) { border-top: 1px solid var(--bdr-1); border-right: none; }
+  .forge-feature__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 64px 0 56px; }
+  .stats__inner { grid-template-columns: 1fr 1fr; }
+  .hero__inner { padding: 0 20px; }
+  .products__head { padding: 0 20px; }
+  .products__grid-wrap { padding: 0 20px; }
+  .forge-feature__inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="xc-nav" role="navigation" aria-label="Main navigation">
+  <div class="xc-nav__inner">
+    <a href="index.html" class="xc-nav__logo" aria-label="Xencore Global home">
+      <div class="xc-nav__logo-mark" aria-hidden="true">
+        <!-- Replace with your actual Xencore SVG logo mark -->
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/>
+        </svg>
+      </div>
+      <div class="xc-nav__logo-text">
+        <span class="xc-nav__logo-name">Xencore Global</span>
+        <span class="xc-nav__logo-sub">AG · Wollerau, Switzerland</span>
+      </div>
+    </a>
+
+    <div class="xc-nav__links" id="xc-nav-links">
+      <a href="index.html"          class="xc-nav__link is-active">Home</a>
+      <a href="what-we-build.html"  class="xc-nav__link">What we build</a>
+      <a href="about.html"          class="xc-nav__link">About</a>
+      <a href="about.html#contact"  class="btn btn--primary" style="font-size:13px;padding:8px 18px">Get in touch</a>
+    </div>
+
+    <button class="xc-nav__toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            onclick="toggleNav(this)">
+      &#9776;
+    </button>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-headline">
+  <div class="hero__inner">
+
+    <div class="hero__label fade-up">
+      <span>Xencore Global AG</span>
+      &middot;
+      <span>Wollerau, Switzerland</span>
+      &middot;
+      <span>Est. 2021</span>
+    </div>
+
+    <h1 class="hero__headline fade-up fade-up-1" id="hero-headline">
+      Enterprise technology.<br>
+      <em>AI innovation.</em><br>
+      <span class="line-green">Environmental solutions.</span>
+    </h1>
+
+    <p class="hero__sub fade-up fade-up-2">
+      We build and deliver technology that transforms businesses,
+      decisions, and the planet. From Zurich to the world.
+    </p>
+
+    <div class="hero__actions fade-up fade-up-3">
+      <a href="what-we-build.html" class="btn btn--primary">
+        What we build
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a href="about.html#contact" class="btn btn--ghost">Get in touch</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CREDENTIAL STRIP -->
+<div class="xc-creds">
+  <div class="xc-creds__inner">
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+      Official Infor Delivery Partner
+    </div>
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      Operations across Europe
+    </div>
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M3 9h18M9 21V9"/>
+      </svg>
+      FADP Compliant · Swiss Data Privacy
+    </div>
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+      20+ years ERP expertise
+    </div>
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      ISO-aligned delivery standards
+    </div>
+  </div>
+</div>
+
+
+<!-- PRODUCTS -->
+<section class="products" aria-labelledby="products-title">
+  <div class="products__head">
+    <div>
+      <div class="eyebrow eyebrow--orange">What we build</div>
+      <h2 class="products__title" id="products-title">
+        Three technologies.<br>One team.
+      </h2>
+    </div>
+    <a href="what-we-build.html" class="btn btn--ghost">
+      See everything we build
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="products__grid-wrap">
+    <div class="xc-product-grid">
+
+      <!-- Forge -->
+      <div class="xc-product-card">
+        <div class="xc-product-card__icon xc-product-card__icon--orange" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div class="xc-product-card__tag xc-product-card__tag--orange">AI Platform</div>
+        <div class="xc-product-card__name">Forge</div>
+        <div class="xc-product-card__desc">
+          The decision layer on top of AI. One question reaches eight AI engines
+          simultaneously — perspectives, synthesis, and consensus scoring in seconds.
+          Built for professionals who need faster, more reliable decisions.
+        </div>
+        <a href="https://forge.projectcoachai.com"
+           class="xc-product-card__link xc-product-card__link--orange"
+           target="_blank" rel="noopener">
+          Try Forge free
+          <svg viewBox="0 0 24 24">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Reforestation — replace [PLATFORM NAME] with actual product name -->
+      <div class="xc-product-card">
+        <div class="xc-product-card__icon xc-product-card__icon--green" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M17 8C8 10 5.9 16.17 3.82 21"/>
+            <path d="M9.1 9.1C8.2 14.3 11.4 19.3 16.4 20.1"/>
+            <path d="M21 3C13 5 9.3 10.7 9 17.3"/>
+          </svg>
+        </div>
+        <div class="xc-product-card__tag xc-product-card__tag--green">Environmental Technology</div>
+        <div class="xc-product-card__name">[Platform Name]</div>
+        <div class="xc-product-card__desc">
+          Carbon credit certification and reforestation monitoring technology,
+          developed for a prominent Swiss environmental client. Field polygon
+          verification, Verra-standard reporting, and real-time forest data management.
+        </div>
+        <a href="what-we-build.html#reforestation"
+           class="xc-product-card__link xc-product-card__link--green">
+          Learn more
+          <svg viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- ERP Services -->
+      <div class="xc-product-card">
+        <div class="xc-product-card__icon xc-product-card__icon--steel" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="xc-product-card__tag xc-product-card__tag--steel">ERP Services</div>
+        <div class="xc-product-card__name">Infor ERP</div>
+        <div class="xc-product-card__desc">
+          Official Infor Delivery Partner. End-to-end LN, M3 and CloudSuite
+          implementation, data migration, integration, training, and managed support.
+          The ERP expertise that powers everything else we do.
+        </div>
+        <a href="what-we-build.html#erp"
+           class="xc-product-card__link xc-product-card__link--steel">
+          Our ERP services
+          <svg viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats__inner">
+    <div class="stat">
+      <div class="stat__num"><span>20</span>+</div>
+      <div class="stat__label">Years ERP<br>expertise</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num"><span>3</span></div>
+      <div class="stat__label">Products<br>in production</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num"><span>8</span></div>
+      <div class="stat__label">AI engines<br>inside Forge</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num"><span>1</span></div>
+      <div class="stat__label">Swiss HQ<br>Global reach</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FORGE FEATURE -->
+<section class="forge-feature" aria-labelledby="forge-title">
+  <div class="forge-feature__inner container">
+
+    <div>
+      <div class="forge-feature__badge">
+        <svg viewBox="0 0 24 24" style="width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+        Featured product
+      </div>
+      <h2 class="forge-feature__title" id="forge-title">
+        We built <span>Forge</span> —<br>
+        the decision layer<br>
+        on top of AI.
+      </h2>
+      <p class="forge-feature__desc">
+        Ask one question. All eight AIs answer simultaneously.
+        The strongest answer surfaces instantly — backed by a live
+        consensus score across all responses.
+      </p>
+      <div class="forge-feature__points">
+        <div class="forge-feature__point">
+          <div class="forge-feature__point-dot" aria-hidden="true"></div>
+          Broadcast to 8 AIs — Claude, ChatGPT, Gemini, Grok, and more
+        </div>
+        <div class="forge-feature__point">
+          <div class="forge-feature__point-dot" aria-hidden="true"></div>
+          Elite synthesis: Best-of-Best answer from all perspectives
+        </div>
+        <div class="forge-feature__point">
+          <div class="forge-feature__point-dot" aria-hidden="true"></div>
+          AI Diary — every decision logged, searchable, exportable
+        </div>
+        <div class="forge-feature__point">
+          <div class="forge-feature__point-dot" aria-hidden="true"></div>
+          Excel analysis: 8 AIs analyse your spreadsheet simultaneously
+        </div>
+        <div class="forge-feature__point">
+          <div class="forge-feature__point-dot" aria-hidden="true"></div>
+          Local-first. Your accounts. Your data. FADP compliant.
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://forge.projectcoachai.com"
+           class="btn btn--primary"
+           target="_blank" rel="noopener">
+          Try Forge free
+        </a>
+        <a href="what-we-build.html#forge" class="btn btn--ghost">
+          Learn more
+        </a>
+      </div>
+    </div>
+
+    <!-- Live product preview -->
+    <div class="forge-preview" aria-hidden="true">
+      <div class="forge-preview__bar">
+        <div class="forge-preview__dot"></div>
+        <div class="forge-preview__dot"></div>
+        <div class="forge-preview__dot"></div>
+        <div class="forge-preview__url">forge.projectcoachai.com</div>
+      </div>
+      <div class="forge-preview__body">
+        <div class="forge-preview__question">
+          Should we expand to the Swiss market this year?
+        </div>
+        <div class="forge-preview__cards">
+          <div class="forge-preview__card">
+            <div class="forge-preview__card-head">
+              <div class="forge-preview__card-dot" style="background:#E8652A"></div>
+              <span class="forge-preview__card-name">Claude</span>
+            </div>
+            <div class="forge-preview__card-body">Switzerland offers a stable regulatory environment and strong consumer purchasing power, though market entry costs are significant...</div>
+          </div>
+          <div class="forge-preview__card">
+            <div class="forge-preview__card-head">
+              <div class="forge-preview__card-dot" style="background:#10A37F"></div>
+              <span class="forge-preview__card-name">ChatGPT</span>
+            </div>
+            <div class="forge-preview__card-body">The Swiss market presents high opportunity for B2B services but requires local entity setup. Timing depends on current runway...</div>
+          </div>
+          <div class="forge-preview__card">
+            <div class="forge-preview__card-head">
+              <div class="forge-preview__card-dot" style="background:#4A8EF4"></div>
+              <span class="forge-preview__card-name">Gemini</span>
+            </div>
+            <div class="forge-preview__card-body">Swiss expansion is advisable if your product addresses a compliance or efficiency gap. Entry strategy should prioritise...</div>
+          </div>
+        </div>
+        <div class="forge-preview__consensus">
+          <div>
+            <div class="forge-preview__consensus-label">Consensus across 8 AIs</div>
+            <div style="font-size:10px;color:var(--tx-muted)">Strong agreement on core recommendation</div>
+          </div>
+          <div class="forge-preview__consensus-score">87%</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA BAND -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:10px">Ready to start?</div>
+    <h2 class="cta-band__title" id="cta-title">
+      Partner with Xencore Global.
+    </h2>
+    <p class="cta-band__sub">
+      Whether you need ERP expertise, AI tooling, or environmental technology —
+      let's talk about what we can build together.
+    </p>
+    <div class="cta-band__actions">
+      <a href="about.html#contact" class="btn btn--primary">Get in touch</a>
+      <a href="what-we-build.html" class="btn btn--ghost">Explore what we build</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="xc-footer" role="contentinfo">
+  <div class="xc-footer__inner">
+
+    <div>
+      <a href="index.html" class="xc-nav__logo" style="margin-bottom:14px;display:inline-flex">
+        <div class="xc-nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+        </div>
+        <div class="xc-nav__logo-text">
+          <span class="xc-nav__logo-name">Xencore Global</span>
+          <span class="xc-nav__logo-sub">AG · Switzerland</span>
+        </div>
+      </a>
+      <p class="xc-footer__brand-desc">
+        Enterprise technology, AI innovation, and environmental solutions.
+        Built with Swiss precision since 2021.
+      </p>
+      <address class="xc-footer__address">
+        Roosstrasse 53<br>
+        8832 Wollerau<br>
+        Switzerland
+      </address>
+    </div>
+
+    <div>
+      <div class="xc-footer__col-title">Products</div>
+      <div class="xc-footer__col-links">
+        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="what-we-build.html#reforestation">Reforestation Platform</a>
+        <a href="what-we-build.html#erp">Infor ERP Services</a>
+        <a href="what-we-build.html#staffing">Staffing</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="xc-footer__col-title">Company</div>
+      <div class="xc-footer__col-links">
+        <a href="about.html">About us</a>
+        <a href="about.html#locations">Locations</a>
+        <a href="about.html#jobs">Jobs</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="https://www.linkedin.com/company/xencore-global-limited/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="xc-footer__col-title">Partners</div>
+      <div class="xc-footer__col-links">
+        <a href="https://www.infor.com" target="_blank" rel="noopener">Infor</a>
+        <a href="https://aws.amazon.com" target="_blank" rel="noopener">AWS</a>
+        <a href="https://azure.microsoft.com" target="_blank" rel="noopener">Microsoft Azure</a>
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>
+        <a href="https://www.servicenow.com" target="_blank" rel="noopener">ServiceNow</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="xc-footer__bottom">
+    <div class="xc-footer__copy">
+      &copy; 2026 Xencore Global AG, Roosstrasse 53, 8832 Wollerau, Switzerland. All rights reserved.
+    </div>
+    <nav class="xc-footer__legal" aria-label="Legal links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  const links = document.getElementById('xc-nav-links');
+  const isOpen = links.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+
+</body>
+</html>
