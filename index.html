@@ -138,8 +138,131 @@
   line-height: 1.5;
 }
 
-/* Forge feature */
-.forge-feature {
+/* AI native section on home */
+.ai-native {
+  padding: 96px 0;
+  border-top: 1px solid var(--bdr-1);
+}
+.ai-native__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.ai-native__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.15;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.ai-native__title span { color: var(--xc-orange); }
+.ai-native__desc {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.ai-native__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ai-native__stack-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ai-native__stack-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--tx-muted);
+}
+.ai-native__stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ai-native__stack-tag {
+  padding: 4px 12px;
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--tx-secondary);
+}
+.ai-native__stack-tag--orange {
+  border-color: var(--xc-orange-bdr);
+  color: var(--xc-orange);
+  background: var(--xc-orange-dim);
+}
+.ai-native__metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.ai-native__metric {
+  background: var(--surf-1);
+  padding: 24px;
+  text-align: center;
+}
+.ai-native__metric-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--xc-orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.ai-native__metric-label {
+  font-size: 11px;
+  color: var(--tx-muted);
+  line-height: 1.5;
+}
+.ai-native__industries {
+  padding: 20px 24px;
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+}
+.ai-native__industries-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--tx-muted);
+  margin-bottom: 12px;
+}
+.ai-native__industries-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ai-native__industries-tag {
+  padding: 3px 10px;
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--tx-muted);
+}
+
+@media (max-width: 960px) {
+  .ai-native__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
   padding: 96px 0;
   border-top: 1px solid var(--bdr-1);
 }
@@ -381,7 +504,8 @@
 
     <p class="hero__sub fade-up fade-up-2">
       We build and deliver technology that transforms businesses,
-      decisions, and the planet. From Zurich to the world.
+      decisions, and the planet. Custom AI solutions. Microsoft Power Platform.
+      Infor ERP. From Switzerland, deployed globally.
     </p>
 
     <div class="hero__actions fade-up fade-up-3">
@@ -410,16 +534,22 @@
     </div>
     <div class="xc-cred">
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="2" y1="12" x2="22" y2="12"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
       </svg>
-      Operations across Europe
+      AI-native development — 8 models
     </div>
     <div class="xc-cred">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="3" y="3" width="18" height="18" rx="2"/>
         <path d="M3 9h18M9 21V9"/>
+      </svg>
+      Microsoft Power Platform partner
+    </div>
+    <div class="xc-cred">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
       </svg>
       FADP Compliant · Swiss Data Privacy
     </div>
@@ -428,12 +558,6 @@
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
       </svg>
       20+ years ERP expertise
-    </div>
-    <div class="xc-cred">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-      ISO-aligned delivery standards
     </div>
   </div>
 </div>
@@ -445,7 +569,7 @@
     <div>
       <div class="eyebrow eyebrow--orange">What we build</div>
       <h2 class="products__title" id="products-title">
-        Three technologies.<br>One team.
+        Three technologies.<br>One team. All AI-native.
       </h2>
     </div>
     <a href="what-we-build.html" class="btn btn--ghost">
@@ -564,6 +688,105 @@
     </div>
   </div>
 </div>
+
+
+<!-- AI-NATIVE SECTION -->
+<section class="ai-native" aria-labelledby="ai-native-title">
+  <div class="ai-native__inner">
+
+    <div>
+      <div class="eyebrow eyebrow--orange">AI solutions &amp; consulting</div>
+      <h2 class="ai-native__title" id="ai-native-title">
+        We don't just use AI.<br>We <span>build with it.</span>
+      </h2>
+      <p class="ai-native__desc">
+        Custom AI applications, Microsoft Power Platform solutions, and process automation —
+        delivered at a fraction of traditional software development cost and timeline.
+        From discovery workshop to production in weeks. Not months.
+      </p>
+      <p class="ai-native__desc" style="margin-top:-12px">
+        We're model-agnostic and platform-flexible. We select the right AI engine
+        for each problem, build the integration, and hand over something your team
+        can actually use — not a proof-of-concept that lives in a slide deck.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="what-we-build.html#ai-solutions" class="btn btn--primary">
+          See our AI services
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="about.html#contact" class="btn btn--ghost">Book a discovery workshop</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="ai-native__metrics">
+        <div class="ai-native__metric">
+          <div class="ai-native__metric-num">10×</div>
+          <div class="ai-native__metric-label">Faster than<br>traditional dev</div>
+        </div>
+        <div class="ai-native__metric">
+          <div class="ai-native__metric-num">Days</div>
+          <div class="ai-native__metric-label">To a working<br>prototype</div>
+        </div>
+        <div class="ai-native__metric">
+          <div class="ai-native__metric-num">8</div>
+          <div class="ai-native__metric-label">AI models<br>we build with</div>
+        </div>
+        <div class="ai-native__metric">
+          <div class="ai-native__metric-num">1</div>
+          <div class="ai-native__metric-label">Swiss team,<br>global delivery</div>
+        </div>
+      </div>
+
+      <div class="ai-native__stack" style="margin-bottom:16px">
+        <div class="ai-native__stack-row">
+          <div class="ai-native__stack-label">Microsoft Power Platform</div>
+          <div class="ai-native__stack-tags">
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">Power Apps</span>
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">Power Automate</span>
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">Power BI</span>
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">Dataverse</span>
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">SharePoint</span>
+            <span class="ai-native__stack-tag ai-native__stack-tag--orange">Dynamics 365</span>
+          </div>
+        </div>
+        <div class="ai-native__stack-row">
+          <div class="ai-native__stack-label">AI models we build with</div>
+          <div class="ai-native__stack-tags">
+            <span class="ai-native__stack-tag">Claude</span>
+            <span class="ai-native__stack-tag">ChatGPT</span>
+            <span class="ai-native__stack-tag">Gemini</span>
+            <span class="ai-native__stack-tag">Meta AI</span>
+            <span class="ai-native__stack-tag">Grok</span>
+            <span class="ai-native__stack-tag">DeepSeek</span>
+            <span class="ai-native__stack-tag">Perplexity</span>
+            <span class="ai-native__stack-tag">Mistral</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-native__industries">
+        <div class="ai-native__industries-label">Industries</div>
+        <div class="ai-native__industries-tags">
+          <span class="ai-native__industries-tag">Manufacturing</span>
+          <span class="ai-native__industries-tag">Banking</span>
+          <span class="ai-native__industries-tag">Legal</span>
+          <span class="ai-native__industries-tag">Food &amp; Beverage</span>
+          <span class="ai-native__industries-tag">Transportation</span>
+          <span class="ai-native__industries-tag">Technology</span>
+          <span class="ai-native__industries-tag">Reforestation</span>
+          <span class="ai-native__industries-tag">Bakery</span>
+          <span class="ai-native__industries-tag">Distribution</span>
+          <span class="ai-native__industries-tag">Professional Services</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- FORGE FEATURE -->
@@ -718,6 +941,7 @@
       <div class="xc-footer__col-title">Products</div>
       <div class="xc-footer__col-links">
         <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="what-we-build.html#ai-solutions">AI Solutions &amp; Consulting</a>
         <a href="what-we-build.html#reforestation">Reforestation Platform</a>
         <a href="what-we-build.html#erp">Infor ERP Services</a>
         <a href="what-we-build.html#staffing">Staffing</a>

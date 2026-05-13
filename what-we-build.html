@@ -139,6 +139,136 @@
   line-height: 1.4;
 }
 
+/* ---- AI SOLUTIONS SECTION ---- */
+#ai-solutions { background: linear-gradient(180deg, var(--bg) 0%, rgba(232,101,42,0.03) 50%, var(--bg) 100%); }
+#ai-solutions .build-section__title span { color: var(--xc-orange); }
+#ai-solutions .build-feature__icon { background: var(--xc-orange-dim); }
+#ai-solutions .build-feature__icon svg { stroke: var(--xc-orange); }
+
+.ai-platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.ai-platform-card {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 28px 32px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ai-platform-card:hover { background: var(--surf-2); border-color: var(--bdr-3); }
+.ai-platform-card__eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--xc-orange);
+  margin-bottom: 10px;
+}
+.ai-platform-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 10px;
+}
+.ai-platform-card__desc {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.ai-platform-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ai-platform-card__tag {
+  padding: 3px 10px;
+  background: var(--surf-3);
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--tx-secondary);
+}
+
+.ai-speed-callout {
+  background: var(--xc-orange-dim);
+  border: 1px solid var(--xc-orange-bdr);
+  border-radius: var(--r-xl);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.ai-speed-callout__stat {
+  text-align: center;
+  flex-shrink: 0;
+}
+.ai-speed-callout__num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--xc-orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.ai-speed-callout__label {
+  font-size: 11px;
+  color: var(--tx-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+.ai-speed-callout__divider {
+  width: 1px;
+  height: 48px;
+  background: var(--xc-orange-bdr);
+  flex-shrink: 0;
+}
+.ai-speed-callout__text {
+  font-size: 15px;
+  color: var(--tx-secondary);
+  line-height: 1.75;
+  flex: 1;
+}
+.ai-speed-callout__text strong { color: var(--tx-primary); font-weight: 500; }
+
+.industry-strip {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+}
+.industry-strip__title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--tx-muted);
+  margin-bottom: 16px;
+}
+.industry-strip__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.industry-strip__tag {
+  padding: 5px 14px;
+  background: var(--surf-2);
+  border: 1px solid var(--bdr-2);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--tx-secondary);
+  transition: border-color 0.15s, color 0.15s;
+}
+.industry-strip__tag:hover { border-color: var(--xc-orange-bdr); color: var(--tx-primary); }
+
 /* ---- REFORESTATION SECTION ---- */
 #reforestation {
   background: linear-gradient(180deg, var(--bg) 0%, rgba(42,122,71,0.04) 50%, var(--bg) 100%);
@@ -234,6 +364,9 @@
   .forge-metrics { grid-template-columns: repeat(2, 1fr); }
   .reforestation-callout { grid-template-columns: 1fr; }
   .staffing-grid { grid-template-columns: 1fr; }
+  .ai-platform-grid { grid-template-columns: 1fr; }
+  .ai-speed-callout { gap: 20px; }
+  .ai-speed-callout__divider { display: none; }
 }
 @media (max-width: 640px) {
   .build-features { grid-template-columns: 1fr; }
@@ -425,7 +558,214 @@
 </section>
 
 
-<!-- SECTION 2: REFORESTATION -->
+<!-- SECTION 2: AI SOLUTIONS -->
+<section class="build-section" id="ai-solutions" aria-labelledby="ai-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--orange">AI Consulting &amp; Development</div>
+        <h2 class="build-section__title" id="ai-title">
+          We build <span>AI solutions.</span><br>Not slide decks.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        We consult, design, and deliver custom AI applications — using the world's
+        leading AI technologies and the Microsoft Power Platform. Real solutions,
+        running in production, built at a fraction of traditional software cost and timeline.
+        If it can be digitised or automated, we'll build it faster than you thought possible.
+      </div>
+    </div>
+
+    <!-- Speed callout -->
+    <div class="ai-speed-callout">
+      <div class="ai-speed-callout__stat">
+        <div class="ai-speed-callout__num">10×</div>
+        <div class="ai-speed-callout__label">Faster than<br>traditional dev</div>
+      </div>
+      <div class="ai-speed-callout__divider"></div>
+      <div class="ai-speed-callout__stat">
+        <div class="ai-speed-callout__num">8</div>
+        <div class="ai-speed-callout__label">AI engines<br>we build with</div>
+      </div>
+      <div class="ai-speed-callout__divider"></div>
+      <div class="ai-speed-callout__stat">
+        <div class="ai-speed-callout__num">Days</div>
+        <div class="ai-speed-callout__label">To working<br>prototype</div>
+      </div>
+      <div class="ai-speed-callout__divider"></div>
+      <div class="ai-speed-callout__text">
+        <strong>AI has changed what's possible.</strong> A custom application that once took
+        six months and a full engineering team can now be built in weeks — fully functional,
+        integrated with your systems, and ready to scale. We don't just advise on AI.
+        We ship it.
+      </div>
+    </div>
+
+    <!-- Two platform cards -->
+    <div class="ai-platform-grid">
+
+      <!-- Microsoft Power Platform -->
+      <div class="ai-platform-card">
+        <div class="ai-platform-card__eyebrow">Microsoft Power Platform</div>
+        <div class="ai-platform-card__title">Custom apps, automations &amp; data intelligence — built on Microsoft</div>
+        <div class="ai-platform-card__desc">
+          We build on the Microsoft ecosystem because it's where enterprise data already lives.
+          Power Apps, Power Automate, Power BI, Dataverse, and Dynamics 365 — connected, automated,
+          and intelligent. From process digitisation to full business applications that integrate
+          seamlessly with your existing Microsoft infrastructure.
+        </div>
+        <div class="ai-platform-card__tags">
+          <span class="ai-platform-card__tag">Power Apps</span>
+          <span class="ai-platform-card__tag">Power Automate</span>
+          <span class="ai-platform-card__tag">Power BI</span>
+          <span class="ai-platform-card__tag">Dataverse</span>
+          <span class="ai-platform-card__tag">SharePoint</span>
+          <span class="ai-platform-card__tag">Dynamics 365</span>
+          <span class="ai-platform-card__tag">Azure AI</span>
+          <span class="ai-platform-card__tag">Copilot Studio</span>
+        </div>
+      </div>
+
+      <!-- AI chatbots & models -->
+      <div class="ai-platform-card">
+        <div class="ai-platform-card__eyebrow">Leading AI Technologies</div>
+        <div class="ai-platform-card__title">Custom AI applications built on the world's best models</div>
+        <div class="ai-platform-card__desc">
+          We design and deploy custom AI solutions using the most capable models available —
+          not locked to one provider. We select the right engine for each use case, build the
+          integration layer, and deliver a product your team can actually use. From internal
+          decision tools to client-facing AI assistants.
+        </div>
+        <div class="ai-platform-card__tags">
+          <span class="ai-platform-card__tag">Claude AI</span>
+          <span class="ai-platform-card__tag">ChatGPT</span>
+          <span class="ai-platform-card__tag">Gemini</span>
+          <span class="ai-platform-card__tag">Meta AI</span>
+          <span class="ai-platform-card__tag">Grok</span>
+          <span class="ai-platform-card__tag">DeepSeek</span>
+          <span class="ai-platform-card__tag">Perplexity</span>
+          <span class="ai-platform-card__tag">Mistral</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Feature grid -->
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Custom AI applications</div>
+        <div class="build-feature__desc">
+          Purpose-built AI tools for your specific workflow — decision support, document
+          processing, internal Q&amp;A, or client-facing assistants. Shipped in weeks, not quarters.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Process digitisation &amp; automation</div>
+        <div class="build-feature__desc">
+          End-to-end digital transformation of manual processes. Power Automate flows,
+          AI-enhanced approval chains, and custom Dataverse applications that eliminate
+          repetitive work and reduce cost.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">System integration &amp; APIs</div>
+        <div class="build-feature__desc">
+          Connect your AI tools, ERP, CRM, and data sources into a unified flow.
+          REST/SOAP APIs, Infor ION, Microsoft connectors, and custom middleware — built to
+          last, not just to demo.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <path d="M2 20h20"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">AI-driven data &amp; reporting</div>
+        <div class="build-feature__desc">
+          Power BI dashboards, AI-generated reports, and natural language queries
+          across your data. Turn spreadsheets and siloed databases into live intelligence
+          your leadership can act on.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">AI strategy &amp; consulting</div>
+        <div class="build-feature__desc">
+          Not sure where AI fits in your business? We run structured AI discovery workshops
+          that identify the highest-value use cases, assess your data readiness, and produce
+          a prioritised build roadmap — not a report that sits on a shelf.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div class="build-feature__name">Rapid prototyping</div>
+        <div class="build-feature__desc">
+          From concept to working prototype in days. We use AI-accelerated development
+          to compress timelines that would traditionally take months — so you can validate,
+          iterate, and launch before your competitors have scoped their first sprint.
+        </div>
+      </div>
+    </div>
+
+    <!-- Industries -->
+    <div class="industry-strip">
+      <div class="industry-strip__title">Industries we serve</div>
+      <div class="industry-strip__tags">
+        <span class="industry-strip__tag">Manufacturing</span>
+        <span class="industry-strip__tag">Banking &amp; Financial Services</span>
+        <span class="industry-strip__tag">Legal</span>
+        <span class="industry-strip__tag">Food &amp; Beverage</span>
+        <span class="industry-strip__tag">Bakery &amp; Retail</span>
+        <span class="industry-strip__tag">Transportation &amp; Logistics</span>
+        <span class="industry-strip__tag">Technology</span>
+        <span class="industry-strip__tag">Reforestation &amp; Carbon</span>
+        <span class="industry-strip__tag">Industrial Distribution</span>
+        <span class="industry-strip__tag">Professional Services</span>
+        <span class="industry-strip__tag">Healthcare</span>
+        <span class="industry-strip__tag">Energy &amp; Utilities</span>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="about.html#contact" class="btn btn--primary">Discuss your AI project</a>
+      <a href="about.html#contact" class="btn btn--ghost">Book an AI discovery workshop</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 3: REFORESTATION -->
 <!-- NOTE: Replace [Platform Name] with the actual product name throughout -->
 <section class="build-section" id="reforestation" aria-labelledby="reforestation-title">
   <div class="build-section__inner">
@@ -545,7 +885,7 @@
 </section>
 
 
-<!-- SECTION 3: ERP -->
+<!-- SECTION 4: ERP -->
 <section class="build-section" id="erp" aria-labelledby="erp-title">
   <div class="build-section__inner">
 
@@ -606,7 +946,7 @@
 </section>
 
 
-<!-- SECTION 4: STAFFING -->
+<!-- SECTION 5: STAFFING -->
 <section class="build-section" id="staffing" aria-labelledby="staffing-title">
   <div class="build-section__inner">
 
@@ -724,6 +1064,7 @@
       <div class="xc-footer__col-title">Products</div>
       <div class="xc-footer__col-links">
         <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="#ai-solutions">AI Solutions &amp; Consulting</a>
         <a href="#reforestation">Reforestation Platform</a>
         <a href="#erp">Infor ERP Services</a>
         <a href="#staffing">Staffing</a>
