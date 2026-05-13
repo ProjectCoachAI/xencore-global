@@ -369,7 +369,7 @@
   <div class="xc-nav__inner">
     <a href="index.html" class="xc-nav__logo" aria-label="Xencore Global home">
       <div class="xc-nav__logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2 2 0 0 1-2-2c0-2 2-5 2-5s2 3 2 5a2 2 0 0 1-2 2z" fill="white"/></svg>
       </div>
       <div class="xc-nav__logo-text">
         <span class="xc-nav__logo-name">Xencore Global</span>
@@ -694,18 +694,26 @@
       </div>
 
       <!--
-        FORM ACTION: Replace with your Cloudflare Pages Function endpoint
-        or a Formspree URL: action="https://formspree.io/f/YOUR_FORM_ID"
-        For Cloudflare Pages Functions: action="/api/contact" method="POST"
+        FORM SETUP — Web3Forms (free, no backend needed)
+        1. Go to https://web3forms.com
+        2. Enter daniel.jones@xencoreglobal.com and click "Create Access Key"
+        3. Copy the key from the email you receive
+        4. Replace ACCESS_KEY_HERE below with your actual key
       -->
       <form
         class="xc-form"
         id="contact-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
         onsubmit="handleSubmit(event)"
         novalidate
       >
+        <!-- Web3Forms required fields -->
+        <input type="hidden" name="access_key" value="ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New enquiry — xencoreglobal.com">
+        <input type="hidden" name="from_name" value="Xencore Global Website">
+        <input type="hidden" name="cc" value="info@xencoreglobal.com">
+        <input type="hidden" name="redirect" value="false">
+        <input type="checkbox" name="botcheck" style="display:none">
+
         <div class="xc-form__row">
           <div class="xc-field">
             <label for="name">Full name *</label>
@@ -729,8 +737,10 @@
           <label for="topic">I'm interested in</label>
           <select id="topic" name="topic">
             <option value="">Select a topic…</option>
+            <option value="ai-solutions">AI solutions &amp; custom development</option>
+            <option value="microsoft-platform">Microsoft Power Platform</option>
+            <option value="forge">Forge — AI decision platform</option>
             <option value="erp">Infor ERP services</option>
-            <option value="forge">Forge — AI platform</option>
             <option value="reforestation">Reforestation platform</option>
             <option value="staffing">Staffing &amp; recruitment</option>
             <option value="partnership">Partnership</option>
@@ -772,7 +782,7 @@
     <div>
       <a href="index.html" class="xc-nav__logo" style="margin-bottom:14px;display:inline-flex">
         <div class="xc-nav__logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 20 20"><path d="M10 2L3 7v6l7 5 7-5V7L10 2zm0 2.5L15 8v4l-5 3.5L5 12V8l5-3.5z" fill="white"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2 2 0 0 1-2-2c0-2 2-5 2-5s2 3 2 5a2 2 0 0 1-2 2z" fill="white"/></svg>
         </div>
         <div class="xc-nav__logo-text">
           <span class="xc-nav__logo-name">Xencore Global</span>
@@ -786,6 +796,7 @@
       <div class="xc-footer__col-title">Products</div>
       <div class="xc-footer__col-links">
         <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="what-we-build.html#ai-solutions">AI Solutions &amp; Consulting</a>
         <a href="what-we-build.html#reforestation">Reforestation Platform</a>
         <a href="what-we-build.html#erp">Infor ERP Services</a>
         <a href="what-we-build.html#staffing">Staffing</a>
@@ -834,16 +845,23 @@ async function handleSubmit(e) {
   const form = document.getElementById('contact-form');
   const btn  = document.getElementById('submit-btn');
 
+  // Basic validation
+  if (!form.name.value || !form.email.value || !form.message.value) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
   try {
-    const res = await fetch(form.action, {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     });
-    if (res.ok) {
+    const data = await res.json();
+    if (data.success) {
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } else {
