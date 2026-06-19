@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What We Build — Xencore Global AG</title>
-<meta name="description" content="Forge AI Platform, reforestation technology, Infor ERP services, and specialist staffing. Built by Xencore Global AG, Switzerland.">
+<meta name="description" content="Forge AI Platform, custom AI development, Infor ERP services, and specialist staffing. Built by Xencore Global AG, Switzerland.">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ---- PAGE-SPECIFIC: WHAT WE BUILD ----------------------- */
@@ -269,34 +269,7 @@
 }
 .industry-strip__tag:hover { border-color: var(--xc-orange-bdr); color: var(--tx-primary); }
 
-/* ---- REFORESTATION SECTION ---- */
-#reforestation {
-  background: linear-gradient(180deg, var(--bg) 0%, rgba(42,122,71,0.04) 50%, var(--bg) 100%);
-}
-#reforestation .build-section__title span { color: var(--xc-green-light); }
-#reforestation .build-feature__icon { background: var(--xc-green-dim); }
-#reforestation .build-feature__icon svg { stroke: var(--xc-green-light); }
 
-.reforestation-callout {
-  background: var(--xc-green-dim);
-  border: 1px solid var(--xc-green-bdr);
-  border-radius: var(--r-xl);
-  padding: 32px 36px;
-  margin-bottom: 40px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: center;
-}
-.reforestation-callout__text {
-  font-size: 15px;
-  color: var(--tx-secondary);
-  line-height: 1.75;
-}
-.reforestation-callout__text strong {
-  color: var(--xc-green-light);
-  font-weight: 500;
-}
 
 /* ---- ERP SECTION ---- */
 #erp .build-section__title span { color: var(--tx-secondary); }
@@ -362,7 +335,7 @@
   .build-section__header { grid-template-columns: 1fr; gap: 16px; }
   .build-features { grid-template-columns: 1fr 1fr; }
   .forge-metrics { grid-template-columns: repeat(2, 1fr); }
-  .reforestation-callout { grid-template-columns: 1fr; }
+
   .staffing-grid { grid-template-columns: 1fr; }
   .ai-platform-grid { grid-template-columns: 1fr; }
   .ai-speed-callout { gap: 20px; }
@@ -748,7 +721,7 @@
         <span class="industry-strip__tag">Bakery &amp; Retail</span>
         <span class="industry-strip__tag">Transportation &amp; Logistics</span>
         <span class="industry-strip__tag">Technology</span>
-        <span class="industry-strip__tag">Reforestation &amp; Carbon</span>
+
         <span class="industry-strip__tag">Industrial Distribution</span>
         <span class="industry-strip__tag">Professional Services</span>
         <span class="industry-strip__tag">Healthcare</span>
@@ -766,123 +739,6 @@
 
 
 <!-- SECTION 3: REFORESTATION -->
-<!-- NOTE: Replace [Platform Name] with the actual product name throughout -->
-<section class="build-section" id="reforestation" aria-labelledby="reforestation-title">
-  <div class="build-section__inner">
-
-    <div class="build-section__header">
-      <div>
-        <div class="eyebrow eyebrow--green">Environmental Technology · Swiss client</div>
-        <h2 class="build-section__title" id="reforestation-title">
-          Reforestation technology<br>that certifies<br><span>real impact.</span>
-        </h2>
-      </div>
-      <div class="build-section__desc">
-        Built for a prominent Swiss environmental client, our reforestation platform
-        manages the full lifecycle of carbon credit certification — from field polygon
-        delineation and satellite monitoring to Verra-standard verification and
-        reporting. Technology that turns reforestation into verifiable, tradeable impact.
-      </div>
-    </div>
-
-    <!-- Replace this callout text with the actual client brief/product description -->
-    <div class="reforestation-callout">
-      <div class="reforestation-callout__text">
-        <strong>Built for Verra certification standards.</strong> Our platform manages
-        field polygon data, automated monitoring reports, carbon sequestration
-        calculations, and chain-of-custody documentation — giving environmental
-        organisations a defensible, auditable record of every hectare restored.
-        Deployed for a leading Swiss client operating reforestation projects across
-        multiple geographies.
-      </div>
-      <a href="about.html#contact" class="btn btn--outline-green">
-        Request briefing
-      </a>
-    </div>
-
-    <div class="build-features">
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Field polygon management</div>
-        <div class="build-feature__desc">
-          Precise delineation and tracking of reforestation zones. GPS-verified
-          boundaries with audit-ready coordinate records.
-        </div>
-      </div>
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Satellite monitoring</div>
-        <div class="build-feature__desc">
-          Continuous remote sensing integration for forest cover change detection,
-          canopy density measurement, and anomaly alerting.
-        </div>
-      </div>
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Verra-standard reporting</div>
-        <div class="build-feature__desc">
-          Automated generation of VCS/REDD+ compliant documentation for
-          submission to Verra certification bodies.
-        </div>
-      </div>
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="12" y1="20" x2="12" y2="10"/>
-            <line x1="18" y1="20" x2="18" y2="4"/>
-            <line x1="6" y1="20" x2="6" y2="16"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Carbon credit calculation</div>
-        <div class="build-feature__desc">
-          Transparent, auditable carbon sequestration modelling with
-          species-specific growth curves and soil carbon accounting.
-        </div>
-      </div>
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Chain of custody</div>
-        <div class="build-feature__desc">
-          End-to-end audit trail from land preparation through certification,
-          credit issuance, and retirement — fully traceable.
-        </div>
-      </div>
-      <div class="build-feature">
-        <div class="build-feature__icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
-          </svg>
-        </div>
-        <div class="build-feature__name">Dashboard & reporting</div>
-        <div class="build-feature__desc">
-          Real-time project dashboards for landowners, investors, and
-          certifiers — exportable to PDF, CSV, and regulatory formats.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 <!-- SECTION 4: ERP -->
@@ -1065,7 +921,6 @@
       <div class="xc-footer__col-links">
         <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
         <a href="#ai-solutions">AI Solutions &amp; Consulting</a>
-        <a href="#reforestation">Reforestation Platform</a>
         <a href="#erp">Infor ERP Services</a>
         <a href="#staffing">Staffing</a>
       </div>

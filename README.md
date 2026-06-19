@@ -53,9 +53,8 @@ https://developers.cloudflare.com/pages/functions/
 Replace the placeholder SVG in all three nav `<div class="xc-nav__logo-mark">` 
 elements with the actual Xencore Global SVG logo mark.
 
-## Reforestation platform
+## Environmental Technology
 
-All instances of `[Platform Name]` in `what-we-build.html` and `index.html`
 should be replaced with the actual product name once confirmed.
 
 ## Forge link
