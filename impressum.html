@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — Xencore Global GmbH</title>
+<meta name="description" content="Impressum of Xencore Global GmbH, Wollerau, Switzerland.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---- PAGE-SPECIFIC: ABOUT & CONTACT --------------------- */
+
+.page-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.page-hero__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--tx-primary);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 12px;
+  max-width: 680px;
+}
+
+/* Story section */
+.story {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.story__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+.story__sticky {
+  position: sticky;
+  top: 96px;
+}
+.story__label {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.story__sub {
+  font-size: 14px;
+  color: var(--tx-muted);
+  line-height: 1.7;
+}
+
+.story__body p {
+  font-size: 16px;
+  color: var(--tx-secondary);
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+.story__body p:last-child { margin-bottom: 0; }
+.story__body strong {
+  color: var(--tx-primary);
+  font-weight: 500;
+}
+.story__body .highlight {
+  color: var(--xc-orange);
+  font-weight: 500;
+}
+.story__body .highlight-green {
+  color: var(--xc-green-light);
+  font-weight: 500;
+}
+
+/* Values */
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 48px;
+}
+.value {
+  background: var(--surf-1);
+  padding: 28px 24px;
+}
+.value__num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--xc-orange);
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+.value__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.value__desc {
+  font-size: 12px;
+  color: var(--tx-muted);
+  line-height: 1.65;
+}
+
+/* Locations */
+.locations {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.locations__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.locations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.location-card {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  transition: border-color 0.15s;
+}
+.location-card:hover { border-color: var(--bdr-3); }
+.location-card__flag {
+  font-size: 28px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.location-card__country {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--xc-orange);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.location-card__city {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 10px;
+}
+.location-card__detail {
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.65;
+}
+.location-card--hq { border-color: var(--xc-orange-bdr); }
+.location-card--hq .location-card__country { color: var(--xc-orange); }
+
+/* Stack section */
+.stack {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.stack__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--bdr-1);
+  border: 1px solid var(--bdr-1);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 36px;
+}
+.stack-item {
+  background: var(--surf-1);
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stack-item__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--xc-orange);
+  flex-shrink: 0;
+}
+.stack-item__name { font-size: 13px; color: var(--tx-secondary); }
+.stack-item__type { font-size: 11px; color: var(--tx-muted); margin-top: 1px; }
+
+/* Jobs */
+.jobs {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--bdr-1);
+}
+.jobs__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.jobs__note {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 36px;
+}
+.jobs__note-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.jobs__note-desc {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.7;
+}
+
+/* Contact */
+.contact {
+  padding: 96px 0;
+}
+.contact__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact__info-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+.contact__info-desc {
+  font-size: 14px;
+  color: var(--tx-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.contact__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tx-secondary);
+  line-height: 1.6;
+}
+.contact__detail-item svg {
+  width: 16px; height: 16px;
+  stroke: var(--xc-orange);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contact__detail-item a { color: var(--xc-orange); }
+.contact__detail-item a:hover { text-decoration: underline; }
+
+.contact__form-wrap {
+  background: var(--surf-1);
+  border: 1px solid var(--bdr-2);
+  border-radius: var(--r-xl);
+  padding: 36px;
+}
+.contact__form-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 24px;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px 0;
+}
+.form-success__icon {
+  width: 48px; height: 48px;
+  background: var(--xc-orange-dim);
+  border: 1px solid var(--xc-orange-bdr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.form-success__icon svg {
+  width: 22px; height: 22px;
+  stroke: var(--xc-orange);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.form-success__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--tx-primary);
+  margin-bottom: 6px;
+}
+.form-success__body { font-size: 13px; color: var(--tx-secondary); }
+
+@media (max-width: 960px) {
+  .story__inner   { grid-template-columns: 1fr; gap: 32px; }
+  .story__sticky  { position: static; }
+  .values         { grid-template-columns: 1fr 1fr; }
+  .locations__grid { grid-template-columns: 1fr 1fr; }
+  .stack__grid    { grid-template-columns: repeat(2, 1fr); }
+  .jobs__note     { grid-template-columns: 1fr; }
+  .contact__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .page-hero__inner  { padding: 0 20px; }
+  .story__inner      { padding: 0 20px; }
+  .locations__inner  { padding: 0 20px; }
+  .stack__inner      { padding: 0 20px; }
+  .jobs__inner       { padding: 0 20px; }
+  .contact__inner    { padding: 0 20px; }
+  .values            { grid-template-columns: 1fr; }
+  .locations__grid   { grid-template-columns: 1fr; }
+  .stack__grid       { grid-template-columns: 1fr 1fr; }
+  .contact__form-wrap { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="xc-nav" role="navigation" aria-label="Main navigation">
+  <div class="xc-nav__inner">
+    <a href="index.html" class="xc-nav__logo" aria-label="Xencore Global home">
+      <div class="xc-nav__logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 20 20"><path d="M10 1c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2 2 0 0 1-2-2c0-2 2-5 2-5s2 3 2 5a2 2 0 0 1-2 2z" fill="white"/></svg>
+      </div>
+      <div class="xc-nav__logo-text">
+        <span class="xc-nav__logo-name">Xencore Global</span>
+        <span class="xc-nav__logo-sub">GmbH · Wollerau, Switzerland</span>
+      </div>
+    </a>
+    <div class="xc-nav__links" id="xc-nav-links">
+      <a href="index.html"          class="xc-nav__link">Home</a>
+      <a href="what-we-build.html"  class="xc-nav__link">What we build</a>
+      <a href="about.html"          class="xc-nav__link">About</a>
+      <a href="about.html#contact"            class="btn btn--primary" style="font-size:13px;padding:8px 18px">Get in touch</a>
+    </div>
+    <button class="xc-nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav(this)">&#9776;</button>
+  </div>
+</nav>
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <div class="eyebrow eyebrow--orange fade-up">Legal</div>
+    <h1 class="page-hero__title fade-up fade-up-1">Impressum</h1>
+  </div>
+</div>
+
+<section style="padding:56px 0 96px">
+  <div style="max-width:780px;margin:0 auto;padding:0 32px">
+    <h2 style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--tx-primary);margin:36px 0 10px">Company</h2>
+    <p style="font-size:16px;line-height:1.7;color:var(--tx-secondary);margin:0 0 16px">Xencore Global GmbH<br>Roosstrasse 53<br>8832 Wollerau<br>Switzerland</p>
+    <h2 style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--tx-primary);margin:36px 0 10px">Company identification number (UID)</h2>
+    <p style="font-size:16px;line-height:1.7;color:var(--tx-secondary);margin:0 0 16px">CHE-440.094.185</p>
+    <h2 style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--tx-primary);margin:36px 0 10px">Contact</h2>
+    <p style="font-size:16px;line-height:1.7;color:var(--tx-secondary);margin:0 0 16px">Email: <a href="mailto:info@xencoreglobal.com" style="color:var(--xc-orange)">info@xencoreglobal.com</a></p>
+    <h2 style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--tx-primary);margin:36px 0 10px">Our products</h2>
+    <p style="font-size:16px;line-height:1.7;color:var(--tx-secondary);margin:0 0 16px">Diary (<a href="https://diary.projectcoachai.com" style="color:var(--xc-orange)">diary.projectcoachai.com</a>) and Forge
+    (<a href="https://forge.projectcoachai.com" style="color:var(--xc-orange)">forge.projectcoachai.com</a>) are operated by Xencore Global GmbH.
+    Their own terms and privacy information apply on those sites.</p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="xc-footer" role="contentinfo">
+  <div class="xc-footer__inner">
+    <div>
+      <a href="index.html" class="xc-nav__logo" style="margin-bottom:14px;display:inline-flex">
+        <div class="xc-nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 20 20"><path d="M10 1c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12zm0 15a2 2 0 0 1-2-2c0-2 2-5 2-5s2 3 2 5a2 2 0 0 1-2 2z" fill="white"/></svg>
+        </div>
+        <div class="xc-nav__logo-text">
+          <span class="xc-nav__logo-name">Xencore Global</span>
+          <span class="xc-nav__logo-sub">GmbH · Switzerland</span>
+        </div>
+      </a>
+      <p class="xc-footer__brand-desc">Enterprise data, AI conversations, and environmental solutions. Built with Swiss precision since 2021.</p>
+      <address class="xc-footer__address">Roosstrasse 53<br>8832 Wollerau<br>Switzerland</address>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Products</div>
+      <div class="xc-footer__col-links">
+        <a href="https://diary.projectcoachai.com" target="_blank" rel="noopener">Diary — AI Conversations</a>
+        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="what-we-build.html#ai-solutions">AI Solutions &amp; Consulting</a>
+        <a href="what-we-build.html#erp">Infor ERP Services</a>
+        <a href="what-we-build.html#staffing">Staffing</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Company</div>
+      <div class="xc-footer__col-links">
+        <a href="about.html">About us</a>
+        <a href="about.html#locations">Locations</a>
+        <a href="about.html#jobs">Jobs</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="https://www.linkedin.com/company/xencore-global-limited/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Partners</div>
+      <div class="xc-footer__col-links">
+        <a href="https://www.infor.com" target="_blank" rel="noopener">Infor</a>
+        <a href="https://aws.amazon.com" target="_blank" rel="noopener">AWS</a>
+        <a href="https://azure.microsoft.com" target="_blank" rel="noopener">Microsoft Azure</a>
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>
+        <a href="https://www.servicenow.com" target="_blank" rel="noopener">ServiceNow</a>
+      </div>
+    </div>
+  </div>
+  <div class="xc-footer__bottom">
+    <div class="xc-footer__copy">&copy; 2026 Xencore Global GmbH, Roosstrasse 53, 8832 Wollerau, Switzerland · UID CHE-440.094.185. All rights reserved.</div>
+    <nav class="xc-footer__legal" aria-label="Legal links">
+      <a href="impressum.html">Impressum</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  const links = document.getElementById('xc-nav-links');
+  const isOpen = links.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+
+</body>
+</html>

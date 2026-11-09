@@ -1,4 +1,4 @@
-# Xencore Global AG — Website
+# Xencore Global GmbH — Website
 
 Three-page static website built for Cloudflare Pages deployment.
 
@@ -9,6 +9,8 @@ Three-page static website built for Cloudflare Pages deployment.
 ├── index.html          Home page
 ├── what-we-build.html  Products & services
 ├── about.html          About & contact
+├── impressum.html      Impressum
+├── privacy.html        Privacy policy
 ├── style.css           Shared stylesheet
 └── README.md           This file
 ```
@@ -34,9 +36,9 @@ In Cloudflare Pages → your project → Custom domains:
 
 ## Contact form
 
-The contact form in `about.html` uses Formspree by default.
+The contact form in `about.html` uses Web3Forms.
 
-1. Create a free account at https://formspree.io
+1. Create a free access key at https://web3forms.com (use info@xencoreglobal.com)
 2. Create a new form and copy your form ID
 3. In `about.html`, replace `YOUR_FORM_ID` in the form action:
    ```html
