@@ -424,7 +424,7 @@ button, input, select, textarea { font-family: inherit; }
 }
 .xc-section-title {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 700;
   color: var(--tx-primary);
   line-height: 1.15;
