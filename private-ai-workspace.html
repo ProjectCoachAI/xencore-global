@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private AI Workspace for Law Firms — Xencore Global GmbH</title>
+<meta name="description" content="A private AI workspace for law firms: answers with sources, ethical walls, approval before anything leaves the firm, and a full audit trail. By Xencore Global GmbH, Switzerland.">
+<link rel="stylesheet" href="style.css">
+<style>
+.pw-hero{padding:80px 0 56px;border-bottom:1px solid var(--bdr-1)}
+.pw-wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.pw-title{font-family:var(--font-display);font-size:clamp(30px,3.8vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:12px 0 18px;max-width:760px}
+.pw-lead{font-size:16px;color:var(--tx-secondary);line-height:1.8;max-width:680px;margin-bottom:28px}
+.pw-sec{padding:80px 0;border-bottom:1px solid var(--bdr-1)}
+.pw-h2{font-family:var(--font-display);font-size:clamp(22px,2.6vw,32px);font-weight:700;line-height:1.15;margin:10px 0 36px;max-width:640px}
+.pw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pw-card{background:var(--surf-1);border:1px solid var(--bdr-2);border-radius:var(--r-lg);padding:26px}
+.pw-card h3{font-family:var(--font-display);font-size:17px;margin-bottom:8px}
+.pw-card p{font-size:14px;color:var(--tx-secondary);line-height:1.7}
+.pw-shot{margin:0 0 40px}
+.pw-shot img{width:100%;height:auto;border:1px solid var(--bdr-2);border-radius:var(--r-lg);display:block}
+.pw-shot figcaption{font-size:13px;color:var(--tx-secondary);margin-top:10px;line-height:1.6}
+.pw-two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pw-list{list-style:none;padding:0;max-width:760px}
+.pw-list li{padding:14px 0;border-bottom:1px solid var(--bdr-1);font-size:15px;color:var(--tx-secondary);line-height:1.7}
+.pw-list b{color:var(--tx-primary)}
+.pw-note{font-size:12.5px;color:var(--tx-muted);margin-top:18px;line-height:1.6}
+@media(max-width:860px){.pw-grid,.pw-two{grid-template-columns:1fr}.pw-wrap{padding:0 20px}.pw-hero,.pw-sec{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<nav class="xc-nav" role="navigation" aria-label="Main navigation">
+  <div class="xc-nav__inner">
+    <a href="index.html" class="xc-nav__logo xc-nav__logo--img" aria-label="Xencore Global home">
+      <img src="assets/xencore-logo.png" alt="Xencore Global" class="xc-logo-img" width="184" height="40">
+    </a>
+    <div class="xc-nav__links" id="xc-nav-links">
+      <a href="index.html"          class="xc-nav__link">Home</a>
+      <a href="what-we-build.html"  class="xc-nav__link is-active">What we build</a>
+      <a href="about.html"          class="xc-nav__link">About</a>
+      <a href="about.html#contact"  class="btn btn--primary" style="font-size:13px;padding:8px 18px">Get in touch</a>
+    </div>
+    <button class="xc-nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav(this)">&#9776;</button>
+  </div>
+</nav>
+<main>
+<section class="pw-hero">
+  <div class="pw-wrap">
+    <div class="eyebrow eyebrow--orange">For law firms</div>
+    <h1 class="pw-title">A private AI workspace for law firms.</h1>
+    <p class="pw-lead">Ask questions across every case file, in any language. Every answer shows the page it came from. Every matter stays behind its ethical wall.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="about.html#contact" class="btn btn--primary">Request a demo</a>
+      <a href="what-we-build.html" class="btn btn--ghost">All we build</a>
+    </div>
+  </div>
+</section>
+
+<section class="pw-sec">
+  <div class="pw-wrap">
+    <div class="eyebrow eyebrow--orange">What the firm gets</div>
+    <h2 class="pw-h2">The speed of AI, without giving up confidentiality.</h2>
+    <div class="pw-grid">
+      <div class="pw-card"><h3>Answers with sources</h3><p>Every answer cites the page it came from. One click opens the original, with a marked translation next to it.</p></div>
+      <div class="pw-card"><h3>One workspace per matter</h3><p>Each matter has its own space, its own documents, with ethical walls and clearance levels enforced by the system.</p></div>
+      <div class="pw-card"><h3>Drafts that wait for approval</h3><p>Nothing leaves the firm until a responsible lawyer approves it. The person who asked cannot approve their own draft.</p></div>
+      <div class="pw-card"><h3>Any language</h3><p>Upload PDFs and Word files in English, Spanish, Korean, Arabic and more, including scanned pages.</p></div>
+      <div class="pw-card"><h3>A record of everything</h3><p>Every question, every passage the AI read and every action is logged, and each entry notes which AI model produced the answer.</p></div>
+      <div class="pw-card"><h3>Your tools, your rules</h3><p>Connects to the systems your lawyers already use, under the same permission model.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pw-sec">
+  <div class="pw-wrap">
+    <div class="eyebrow eyebrow--orange">See it working</div>
+    <h2 class="pw-h2">Every answer points to the exact source.</h2>
+    <figure class="pw-shot"><img src="assets/law-workspace-answers.png" alt="Assistant answer with page citations and a marked translation of the source document" loading="lazy"><figcaption>An answer with page citations. The source panel shows the original document, here in Korean, with a marked translation.</figcaption></figure>
+    <div class="pw-two">
+      <figure class="pw-shot"><img src="assets/law-workspace-walls.png" alt="Matter members with clearance levels and an ethical wall" loading="lazy"><figcaption>Members of a matter with clearance levels, and an ethical wall barring one person.</figcaption></figure>
+      <figure class="pw-shot"><img src="assets/law-workspace-audit.png" alt="Audit trail listing every question, passage read and approval" loading="lazy"><figcaption>The audit trail: every question, passage read, approval and download.</figcaption></figure>
+    </div>
+    <p class="pw-note">Screens show sample data for a fictional firm and matter.</p>
+  </div>
+</section>
+
+<section class="pw-sec">
+  <div class="pw-wrap">
+    <div class="eyebrow eyebrow--orange">Security</div>
+    <h2 class="pw-h2">How your clients' data stays protected.</h2>
+    <ul class="pw-list">
+      <li><b>Isolated storage.</b> Each customer's data lives in its own storage, encrypted with a key unique to that customer.</li>
+      <li><b>Ethical walls and clearance levels.</b> A person walled off from a matter cannot see it, search it or be added to it, and the AI never uses its documents in their answers.</li>
+      <li><b>Two-step sign-in.</b> The firm can require it for everyone.</li>
+      <li><b>Data residency.</b> Files can be kept inside the United States or the European Union, as agreed with your team during the security review.</li>
+      <li><b>No training on your data.</b> Your documents are never used to train AI models.</li>
+      <li><b>Deletion on request.</b> Data is removed from the live system on request and from all backups within 30 days.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pw-sec">
+  <div class="pw-wrap">
+    <div class="eyebrow eyebrow--orange">Rollout</div>
+    <h2 class="pw-h2">Start with one practice group.</h2>
+    <ul class="pw-list">
+      <li><b>1. Agree the plan.</b> Priorities, systems and security requirements.</li>
+      <li><b>2. Demo on sample documents.</b> Your team tries it on non-confidential files in several languages.</li>
+      <li><b>3. Security review.</b> Your IT team reviews how data is stored, separated, encrypted and logged.</li>
+      <li><b>4. Pilot.</b> One team works on real matters, connected to your chosen systems.</li>
+      <li><b>5. Firm-wide rollout.</b> More teams, matters and connections, step by step.</li>
+    </ul>
+  </div>
+</section>
+
+<section style="padding:80px 0;text-align:center">
+  <div class="pw-wrap">
+    <div class="eyebrow" style="margin-bottom:10px">Next step</div>
+    <h2 class="pw-h2" style="margin:10px auto 14px">See it on a sample matter.</h2>
+    <p class="pw-lead" style="margin:0 auto 26px">A 45-minute demo for your lawyers and your IT team, in the languages your matters use.</p>
+    <a href="about.html#contact" class="btn btn--primary">Request a demo</a>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="xc-footer" role="contentinfo">
+  <div class="xc-footer__inner">
+    <div>
+      <a href="index.html" class="xc-nav__logo xc-nav__logo--img" style="margin-bottom:14px;display:inline-flex">
+        <img src="assets/xencore-logo.png" alt="Xencore Global" class="xc-logo-img" width="184" height="40">
+      </a>
+      <p class="xc-footer__brand-desc">Enterprise data, AI conversations, and environmental solutions. Built with Swiss precision since 2021.</p>
+      <address class="xc-footer__address">Roosstrasse 53<br>8832 Wollerau<br>Switzerland</address>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Products</div>
+      <div class="xc-footer__col-links">
+        <a href="https://diary.projectcoachai.com" target="_blank" rel="noopener">Diary — AI Conversations</a>
+        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="private-ai-workspace.html">AI Workspace for Law Firms</a>
+        <a href="what-we-build.html#ai-solutions">AI Solutions &amp; Consulting</a>
+        <a href="what-we-build.html#erp">Infor ERP Services</a>
+        <a href="what-we-build.html#staffing">Staffing</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Company</div>
+      <div class="xc-footer__col-links">
+        <a href="about.html">About us</a>
+        <a href="about.html#locations">Locations</a>
+        <a href="about.html#jobs">Jobs</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="https://www.linkedin.com/company/xencore-global-limited/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="xc-footer__col-title">Partners</div>
+      <div class="xc-footer__col-links">
+        <a href="https://www.infor.com" target="_blank" rel="noopener">Infor</a>
+        <a href="https://aws.amazon.com" target="_blank" rel="noopener">AWS</a>
+        <a href="https://azure.microsoft.com" target="_blank" rel="noopener">Microsoft Azure</a>
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a>
+        <a href="https://www.servicenow.com" target="_blank" rel="noopener">ServiceNow</a>
+      </div>
+    </div>
+  </div>
+  <div class="xc-footer__bottom">
+    <div class="xc-footer__copy">&copy; 2026 Xencore Global GmbH, Roosstrasse 53, 8832 Wollerau, Switzerland · UID CHE-440.094.185. All rights reserved.</div>
+    <nav class="xc-footer__legal" aria-label="Legal links">
+      <a href="impressum.html">Impressum</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  const links = document.getElementById('xc-nav-links');
+  const isOpen = links.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
+</script>
+
+</body>
+</html>
