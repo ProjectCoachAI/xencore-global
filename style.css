@@ -526,7 +526,7 @@ button, input, select, textarea { font-family: inherit; }
   .xc-footer__bottom { flex-direction: column; text-align: center; }
 }
 
-/* Official logo on dark background: shown unaltered on a light chip */
-.xc-nav__logo--img { background:#fff; border-radius:8px; padding:6px 12px; display:inline-flex; align-items:center; }
-.xc-logo-img { display:block; height:34px; width:auto; }
-@media (max-width: 640px) { .xc-logo-img { height:28px; } }
+/* Official logo, light-on-dark version (white wordmark, original coral) */
+.xc-nav__logo--img { display:inline-flex; align-items:center; background:none; padding:0; }
+.xc-logo-img { display:block; height:40px; width:auto; }
+@media (max-width: 640px) { .xc-logo-img { height:32px; } }
