@@ -25,6 +25,16 @@
 .pw-list li{padding:14px 0;border-bottom:1px solid var(--bdr-1);font-size:15px;color:var(--tx-secondary);line-height:1.7}
 .pw-list b{color:var(--tx-primary)}
 .pw-note{font-size:12.5px;color:var(--tx-muted);margin-top:18px;line-height:1.6}
+
+.pw-two{align-items:start}
+.pw-two .pw-shot{margin:0}
+.pw-two .pw-shot img{aspect-ratio:1440/956;object-fit:contain;object-position:top center;background:#f4f4f5}
+.pw-shot img{cursor:zoom-in;transition:border-color .15s}
+.pw-shot img:hover{border-color:var(--xc-orange)}
+.pw-lb{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.pw-lb.is-open{display:flex}
+.pw-lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:10px;background:#fff}
+.pw-lb button{position:absolute;top:16px;right:20px;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer}
 @media(max-width:860px){.pw-grid,.pw-two{grid-template-columns:1fr}.pw-wrap{padding:0 20px}.pw-hero,.pw-sec{padding:56px 0}}
 </style>
 </head>
@@ -175,6 +185,21 @@
   </div>
 </footer>
 
+<div class="pw-lb" id="pw-lb" role="dialog" aria-label="Enlarged screenshot" aria-hidden="true"><button type="button" aria-label="Close">&times;</button><img alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('pw-lb'),big=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');big.removeAttribute('src');}
+  document.querySelectorAll('.pw-shot img').forEach(function(im){
+    im.setAttribute('tabindex','0');im.setAttribute('role','button');
+    function open(){big.src=im.currentSrc||im.src;big.alt=im.alt;lb.classList.add('is-open');lb.setAttribute('aria-hidden','false');}
+    im.addEventListener('click',open);
+    im.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 <script>
 function toggleNav(btn) {
   const links = document.getElementById('xc-nav-links');
