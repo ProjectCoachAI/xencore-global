@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What We Build — Xencore Global GmbH</title>
-<meta name="description" content="Diary, Forge, custom AI development, Infor ERP services, and specialist staffing. Built by Xencore Global GmbH, Switzerland.">
+<meta name="description" content="Diary, Forge, Sweep, Excel, Documents, custom AI development, Infor ERP services, and specialist staffing. Built by Xencore Global GmbH, Switzerland.">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ---- PAGE-SPECIFIC: WHAT WE BUILD ----------------------- */
@@ -104,10 +104,10 @@
 }
 
 /* ---- FORGE SECTION ---- */
-#forge .build-section__title, #diary .build-section__title { color: var(--tx-primary); }
-#forge .build-section__title span, #diary .build-section__title span { color: var(--xc-orange); }
-#forge .build-feature__icon, #diary .build-feature__icon { background: var(--xc-orange-dim); }
-#forge .build-feature__icon svg, #diary .build-feature__icon svg { stroke: var(--xc-orange); }
+#forge .build-section__title, #diary .build-section__title, #sweep .build-section__title, #excel .build-section__title, #documents .build-section__title { color: var(--tx-primary); }
+#forge .build-section__title span, #diary .build-section__title span, #sweep .build-section__title span, #excel .build-section__title span, #documents .build-section__title span { color: var(--xc-orange); }
+#forge .build-feature__icon, #diary .build-feature__icon, #sweep .build-feature__icon, #excel .build-feature__icon, #documents .build-feature__icon { background: var(--xc-orange-dim); }
+#forge .build-feature__icon svg, #diary .build-feature__icon svg, #sweep .build-feature__icon svg, #excel .build-feature__icon svg, #documents .build-feature__icon svg { stroke: var(--xc-orange); }
 
 /* Forge metrics row */
 .forge-metrics {
@@ -698,7 +698,178 @@
 </section>
 
 
-<!-- SECTION 3: AI SOLUTIONS -->
+<!-- SECTION 3: SWEEP -->
+<section class="build-section" id="sweep" aria-labelledby="sweep-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--orange">AI research tool</div>
+        <h2 class="build-section__title" id="sweep-title">
+          <span>Forge Sweep</span> — stop opening<br>five tabs.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Ask one question and get perspectives from eight AI assistants simultaneously: Claude, ChatGPT, Gemini, Perplexity, Grok, DeepSeek, Mistral and Meta AI. Sweep synthesises the strongest elements into one answer, so you decide faster.
+      </div>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="build-feature__name">Ask in plain English</div>
+        <div class="build-feature__desc">
+          Type any research question: market analysis, competitive intelligence, technical deep-dives, decisions you need to weigh.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg>
+        </div>
+        <div class="build-feature__name">Eight AIs at once</div>
+        <div class="build-feature__desc">
+          All eight answer simultaneously, side by side. No switching tabs, no copying and pasting between windows.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="build-feature__name">One best answer</div>
+        <div class="build-feature__desc">
+          Forge Synthesis combines the strongest elements from every response. Save the result to Diary, export it or share it.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://forge.projectcoachai.com/sweep" class="btn btn--primary">
+        Try Sweep
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 4: EXCEL -->
+<section class="build-section" id="excel" aria-labelledby="excel-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--orange">AI spreadsheet intelligence</div>
+        <h2 class="build-section__title" id="excel-title">
+          <span>Forge Excel</span> — your data<br>has answers.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Upload a spreadsheet and ask anything in plain English. Get analysis, charts and summaries without formulas or pivot tables. Excel and CSV files are supported, and PDF tables can be pulled into a spreadsheet for comparison.
+      </div>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="build-feature__name">Ask in plain English</div>
+        <div class="build-feature__desc">
+          What is my highest-margin product? Which region is declining? Forge reads the file and answers, with no reformatting needed.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="build-feature__name">Analysis you can use</div>
+        <div class="build-feature__desc">
+          Instant analysis, charts and summaries, ready to copy, export or share.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="build-feature__name">Built for everyday work</div>
+        <div class="build-feature__desc">
+          Sales and revenue, finance and budgets, quantity surveying, inventory and operations, HR data and marketing analytics.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://forge.projectcoachai.com/excel" class="btn btn--primary">
+        Try Excel
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 5: DOCUMENTS -->
+<section class="build-section" id="documents" aria-labelledby="documents-title">
+  <div class="build-section__inner">
+
+    <div class="build-section__header">
+      <div>
+        <div class="eyebrow eyebrow--orange">AI document intelligence</div>
+        <h2 class="build-section__title" id="documents-title">
+          <span>Forge Documents</span> — your<br>documents have answers.
+        </h2>
+      </div>
+      <div class="build-section__desc">
+        Upload a PDF or Word file and ask questions in plain English. Forge finds the answer and points to the exact section, so you do not have to read every page to find it.
+      </div>
+    </div>
+
+    <div class="build-features">
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="build-feature__name">Ask in plain English</div>
+        <div class="build-feature__desc">
+          What are the payment terms? Summarise the key risks. What does clause 7 say? Forge understands and answers.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="build-feature__name">Answers with references</div>
+        <div class="build-feature__desc">
+          Precise answers that refer to the exact section. Copy them, export them, or ask a follow-up.
+        </div>
+      </div>
+      <div class="build-feature">
+        <div class="build-feature__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="build-feature__name">Built for your work</div>
+        <div class="build-feature__desc">
+          Contracts and legal, reports and research, tenders and specifications, policies and compliance, study material and financial documents.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://forge.projectcoachai.com/documents" class="btn btn--primary">
+        Try Documents
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SECTION 6: AI SOLUTIONS -->
 <section class="build-section" id="ai-solutions" aria-labelledby="ai-title">
   <div class="build-section__inner">
 
@@ -713,7 +884,7 @@
         We consult, design, and deliver custom AI applications — using the world's
         leading AI technologies and the Microsoft Power Platform. Real solutions,
         running in production, built at a fraction of traditional software cost and timeline.
-        Forge is ours — built on the same stack we use for clients. If it can be digitised
+        Our own AI suite is built on the same stack we use for clients. If it can be digitised
         or automated, we'll build it faster than you thought possible.
       </div>
     </div>
@@ -731,8 +902,8 @@
       </div>
       <div class="ai-speed-callout__divider"></div>
       <div class="ai-speed-callout__stat">
-        <div class="ai-speed-callout__num">2</div>
-        <div class="ai-speed-callout__label">Own products<br>in production</div>
+        <div class="ai-speed-callout__num">5</div>
+        <div class="ai-speed-callout__label">Own AI products<br>in our suite</div>
       </div>
       <div class="ai-speed-callout__divider"></div>
       <div class="ai-speed-callout__text">
@@ -1042,8 +1213,11 @@
     <div>
       <div class="xc-footer__col-title">Products</div>
       <div class="xc-footer__col-links">
-        <a href="https://diary.projectcoachai.com" target="_blank" rel="noopener">Diary — AI Conversations</a>
-        <a href="https://forge.projectcoachai.com" target="_blank" rel="noopener">Forge — AI Platform</a>
+        <a href="https://diary.projectcoachai.com">Diary — AI Conversations</a>
+        <a href="https://forge.projectcoachai.com">Forge — AI Platform</a>
+        <a href="https://forge.projectcoachai.com/sweep">Sweep — AI Research</a>
+        <a href="https://forge.projectcoachai.com/excel">Excel — Spreadsheet Analysis</a>
+        <a href="https://forge.projectcoachai.com/documents">Documents — Document Analysis</a>
         <a href="private-ai-workspace.html">AI Workspace for Law Firms</a>
         <a href="#ai-solutions">AI Solutions &amp; Consulting</a>
         <a href="#erp">Infor ERP Services</a>
